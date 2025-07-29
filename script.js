@@ -1,4 +1,3 @@
-
 const i18n = {
     pt: {
         subtitle: "Desenvolvedor & Consultor Técnico",
