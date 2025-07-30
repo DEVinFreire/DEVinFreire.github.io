@@ -1,11 +1,12 @@
-
-        const i18n = {
+const i18n = {
             pt: {
                 subtitle: "Desenvolvedor & Consultor Técnico",
+                personal_info: "37 anos | Casado",
                 nav_summary: "Resumo",
                 nav_experience: "Experiência",
                 nav_skills: "Habilidades",
                 nav_education: "Formação",
+                nav_languages: "Idiomas",
                 nav_contact: "Contato",
                 print_button: "Imprimir",
                 location: "Fortaleza, Ceará, Brasil",
@@ -22,6 +23,9 @@
                 education_intro: "Aqui você encontra meu histórico educacional, desde cursos técnicos fundamentais até as especializações mais recentes em desenvolvimento web e design. A formação está organizada em duas categorias para facilitar a visualização do meu compromisso com o aprendizado contínuo e a adaptação às novas tecnologias.",
                 dev_courses_title: "Desenvolvimento e Design (2021 - 2024)",
                 tech_courses_title: "Cursos Técnicos (2004 - 2005)",
+                languages_title: "Idiomas",
+                english_language_name: "Inglês",
+                english_level: "Avançado (Leitura, Escrita e Conversação)",
                 contact_title: "Contato",
                 contact_intro: "Gostou do que viu? Ficarei feliz em conectar e discutir como minhas habilidades e experiência podem agregar valor à sua equipe ou projeto. Utilize um dos canais abaixo para entrar em contato.",
                 tech_experience: [
@@ -51,10 +55,12 @@
             },
             en: {
                 subtitle: "Developer & Technical Consultant",
+                personal_info: "37 years old | Married",
                 nav_summary: "Summary",
                 nav_experience: "Experience",
                 nav_skills: "Skills",
                 nav_education: "Education",
+                nav_languages: "Languages",
                 nav_contact: "Contact",
                 print_button: "Print",
                 location: "Fortaleza, Ceará, Brazil",
@@ -71,6 +77,9 @@
                 education_intro: "Here you will find my educational background, from fundamental technical courses to the most recent specializations in web development and design. The training is organized into two categories to facilitate the visualization of my commitment to continuous learning and adaptation to new technologies.",
                 dev_courses_title: "Development & Design (2021 - 2024)",
                 tech_courses_title: "Technical Courses (2004 - 2005)",
+                languages_title: "Languages",
+                english_language_name: "English",
+                english_level: "Advanced (Reading, Writing, and Speaking)",
                 contact_title: "Contact",
                 contact_intro: "Liked what you saw? I would be happy to connect and discuss how my skills and experience can add value to your team or project. Use one of the channels below to get in touch.",
                 tech_experience: [
@@ -205,7 +214,7 @@
             printContainer.innerHTML = `
                 <h1>Francisco Nilton Freire Filho</h1>
                 <div class="print-contact">
-                    niltonff@hotmail.com | WhatsApp: (85) 99921-0922 | 
+                    ${content.personal_info} | niltonff@hotmail.com | WhatsApp: (85) 99921-0922 | 
                     <a href="https://www.linkedin.com/in/nilton-freire-661797217" target="_blank">LinkedIn</a> | 
                     <a href="https://github.com/DEVinFreire" target="_blank">GitHub</a>
                 </div>
@@ -231,8 +240,11 @@
                     <b>Frontend:</b> HTML, CSS, JavaScript, React, Tailwind CSS | 
                     <b>Technical:</b> Technical Consulting, Quality Assurance, Hardware, Networks | 
                     <b>Management & Sales:</b> Team Management, Customer Service |
-                    <b>Languages & Tools:</b> Advanced English, Office Suite
+                    <b>Tools:</b> Office Suite
                 </p>
+
+                <h2>${content.languages_title}</h2>
+                <p><b>${content.english_language_name}:</b> ${content.english_level}</p>
             `;
         }
 
