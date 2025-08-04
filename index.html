@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo Interativo | Francisco Nilton Freire Filho</title>
+    <title>Interactive Resume | Francisco Nilton Freire Filho</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -238,6 +238,7 @@
     <script>
         const i18n = {
             pt: {
+                title: "Currículo Interativo | Francisco Nilton Freire Filho",
                 subtitle: "Desenvolvedor & Consultor Técnico",
                 personal_info: "37 anos | Casado",
                 nav_summary: "Resumo",
@@ -292,6 +293,7 @@
                 print_education_title: "Formação Principal"
             },
             en: {
+                title: "Interactive Resume | Francisco Nilton Freire Filho",
                 subtitle: "Developer & Technical Consultant",
                 personal_info: "37 years old | Married",
                 nav_summary: "Summary",
@@ -351,6 +353,7 @@
         
         function renderContent(lang) {
             const content = i18n[lang];
+            document.title = content.title;
             
             document.querySelectorAll('[data-key]').forEach(elem => {
                 const key = elem.getAttribute('data-key');
