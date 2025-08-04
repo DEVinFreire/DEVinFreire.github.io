@@ -145,8 +145,7 @@
             <section id="resumo" class="mb-16 scroll-mt-28 md:scroll-mt-20">
                 <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-amber-400 pb-2 mb-6" data-key="summary_title">Resumo Profissional</h2>
                 <div class="space-y-4 text-lg text-slate-600 leading-relaxed">
-                    <p data-key="summary_intro">Esta seção apresenta um panorama da minha carreira, destacando a transição de uma sólida trajetória em vendas e atendimento ao cliente para a área de tecnologia. Aqui, você entenderá a fusão de mais de uma década de experiência em soluções personalizadas com a paixão pelo desenvolvimento de software, resultando em uma perspectiva única para a criação de produtos eficientes e centrados no usuário.</p>
-                    <p class="p-4 bg-white rounded-lg shadow" data-key="summary_body">Profissional em vendas e atendimento ao cliente com mais de uma década de experiência, especializado em fornecer soluções de alta qualidade e personalizadas. Aos 37 anos, trago um histórico comprovado de sucesso em ambientes dinâmicos e orientados para resultados. Comprometido com o desenvolvimento contínuo, possuo sólidos conhecimentos em tecnologia e programação, e venho me aprofundando no estudo de Modelos de Linguagem (LLMs) para otimizar processos e o desenvolvimento de sistemas. Busco oportunidades que me permitam crescer tanto profissional quanto pessoalmente, contribuindo para o sucesso da equipe e da empresa.</p>
+                    <p class="p-4 bg-white rounded-lg shadow" data-key="summary_body">Desenvolvedor Front-end com uma base sólida de mais de 10 anos em consultoria técnica e atendimento ao cliente, o que me permite traduzir necessidades complexas de usuários em interfaces intuitivas e eficientes. Especializado no ecossistema JavaScript (React, Node.js) e Quality Assurance (Cypress), estou aprofundando meus estudos em Modelos de Linguagem (LLMs) para otimizar o desenvolvimento de sistemas. Busco aplicar minha visão sistêmica para criar soluções de alto impacto.</p>
                 </div>
             </section>
 
@@ -250,8 +249,7 @@
                 print_button: "Imprimir",
                 location: "Fortaleza, Ceará, Brasil",
                 summary_title: "Resumo Profissional",
-                summary_intro: "Esta seção apresenta um panorama da minha carreira, destacando a transição de uma sólida trajetória em vendas e atendimento ao cliente para a área de tecnologia. Aqui, você entenderá a fusão de mais de uma década de experiência em soluções personalizadas com a paixão pelo desenvolvimento de software, resultando em uma perspectiva única para a criação de produtos eficientes e centrados no usuário.",
-                summary_body: "Profissional em vendas e atendimento ao cliente com mais de uma década de experiência, especializado em fornecer soluções de alta qualidade e personalizadas. Aos 37 anos, trago um histórico comprovado de sucesso em ambientes dinâmicos e orientados para resultados. Comprometido com o desenvolvimento contínuo, possuo sólidos conhecimentos em tecnologia e programação, e venho me aprofundando no estudo de Modelos de Linguagem (LLMs) para otimizar processos e o desenvolvimento de sistemas. Busco oportunidades que me permitam crescer tanto profissional quanto pessoalmente, contribuindo para o sucesso da equipe e da empresa.",
+                summary_body: "Desenvolvedor Front-end com uma base sólida de mais de 10 anos em consultoria técnica e atendimento ao cliente, o que me permite traduzir necessidades complexas de usuários em interfaces intuitivas e eficientes. Especializado no ecossistema JavaScript (React, Node.js) e Quality Assurance (Cypress), estou aprofundando meus estudos em Modelos de Linguagem (LLMs) para otimizar o desenvolvimento de sistemas. Busco aplicar minha visão sistêmica para criar soluções de alto impacto.",
                 experience_title: "Linha do Tempo da Carreira",
                 experience_intro: "Abaixo, você pode explorar minha jornada profissional de forma interativa. A linha do tempo está dividida em duas fases principais: minha carreira consolidada na área técnica e comercial, e minha atual carreira em tecnologia. Clique em cada cargo para expandir e ver os detalhes e responsabilidades. Esta visualização foi projetada para demonstrar a evolução e a amplitude das minhas competências ao longo dos anos.",
                 tech_career_title: "Carreira em Tecnologia",
@@ -305,8 +303,7 @@
                 print_button: "Print",
                 location: "Fortaleza, Ceará, Brazil",
                 summary_title: "Professional Summary",
-                summary_intro: "This section provides an overview of my career, highlighting the transition from a solid background in sales and customer service to the technology field. Here, you will understand the fusion of over a decade of experience in customized solutions with a passion for software development, resulting in a unique perspective for creating efficient, user-centered products.",
-                summary_body: "A sales and customer service professional with over a decade of experience, specializing in providing high-quality, personalized solutions. At 37, I bring a proven track record of success in dynamic, results-oriented environments. Committed to continuous development, I have solid knowledge in technology and programming, and I have been deepening my studies in Language Models (LLMs) to optimize processes and systems development. I seek opportunities that allow me to grow both professionally and personally, contributing significantly to the success of the team and the company.",
+                summary_body: "Frontend Developer with a solid foundation of over 10 years in technical consulting and customer service, allowing me to translate complex user needs into intuitive and efficient interfaces. Specializing in the JavaScript ecosystem (React, Node.js) and Quality Assurance (Cypress), I am deepening my studies in Language Models (LLMs) to optimize systems development. I seek to apply my systemic vision to create high-impact solutions.",
                 experience_title: "Career Timeline",
                 experience_intro: "Below, you can explore my professional journey interactively. The timeline is divided into two main phases: my established career in the technical and commercial area, and my current career in technology. Click on each role to expand and see the details and responsibilities. This visualization is designed to demonstrate the evolution and breadth of my skills over the years.",
                 tech_career_title: "Career in Technology",
@@ -502,7 +499,7 @@
             document.getElementById('print-btn').addEventListener('click', () => window.print());
 
             const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link, header nav a'); // Inclui links do mobile
+            const navLinks = document.querySelectorAll('.nav-link, header nav a');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
