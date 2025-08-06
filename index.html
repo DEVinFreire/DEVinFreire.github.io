@@ -182,10 +182,7 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow">
                         <h3 class="text-xl font-bold text-slate-800 mb-4" data-key="dev_courses_title">Desenvolvimento e Design (2021 - 2025)</h3>
-                        <ul class="space-y-2 text-slate-600">
-                            <li><strong data-key="course_geracao_tech">Geração Tech (IEL Ceará, 2025):</strong> Formação Full-Stack (200h - React, Node.js, SQL, Cypress).</li>
-                            <li><strong>Udemy (Jonas Schmedtmann):</strong> Advanced JavaScript, Advanced CSS and Sass.</li>
-                            <li><strong>Origamid:</strong> React, UI Design, JavaScript ES6, CSS Grid Layout, CSS Flexbox, HTML e CSS.</li>
+                        <ul id="dev-courses-list" class="space-y-2 text-slate-600">
                         </ul>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow">
@@ -260,7 +257,11 @@
                 education_title: "Formação e Cursos",
                 education_intro: "Aqui você encontra meu histórico educacional, desde cursos técnicos fundamentais até as especializações mais recentes em desenvolvimento web e design. A formação está organizada em duas categorias para facilitar a visualização do meu compromisso com o aprendizado contínuo e a adaptação às novas tecnologias.",
                 dev_courses_title: "Desenvolvimento e Design (2021 - 2025)",
-                course_geracao_tech: "Geração Tech (IEL Ceará, 2025):",
+                dev_courses_list: [
+                    '<strong>Geração Tech 2.0 (IEL & Gov. do Ceará, 2025):</strong> Formação Full-Stack (200h). Classificado entre os 50 melhores. Tecnologias: React, Node.js, SQL, Cypress, Git/GitHub e Cloud.',
+                    '<strong>Udemy (Jonas Schmedtmann):</strong> Advanced JavaScript, Advanced CSS and Sass.',
+                    '<strong>Origamid:</strong> React, UI Design, JavaScript ES6, CSS Grid Layout, CSS Flexbox, HTML e CSS.'
+                ],
                 tech_courses_title: "Cursos Técnicos (2004 - 2005)",
                 languages_title: "Idiomas",
                 english_language_name: "Inglês",
@@ -315,7 +316,11 @@
                 education_title: "Education & Courses",
                 education_intro: "Here you will find my educational background, from fundamental technical courses to the most recent specializations in web development and design. The training is organized into two categories to facilitate the visualization of my commitment to continuous learning and adaptation to new technologies.",
                 dev_courses_title: "Development & Design (2021 - 2025)",
-                course_geracao_tech: "Geração Tech (IEL Ceará, 2025):",
+                dev_courses_list: [
+                    '<strong>Geração Tech 2.0 (IEL & Ceará State Gov., 2025):</strong> Full-Stack Training (200h). Ranked among the top 50. Technologies: React, Node.js, SQL, Cypress, Git/GitHub, and Cloud.',
+                    '<strong>Udemy (Jonas Schmedtmann):</strong> Advanced JavaScript, Advanced CSS and Sass.',
+                    '<strong>Origamid:</strong> React, UI Design, JavaScript ES6, CSS Grid Layout, CSS Flexbox, HTML e CSS.'
+                ],
                 tech_courses_title: "Technical Courses (2004 - 2005)",
                 languages_title: "Languages",
                 english_language_name: "English",
@@ -357,13 +362,14 @@
             
             document.querySelectorAll('[data-key]').forEach(elem => {
                 const key = elem.getAttribute('data-key');
-                if (content[key]) {
+                if (content[key] && typeof content[key] === 'string') {
                     elem.innerHTML = content[key];
                 }
             });
 
             renderTimeline('tech-experience', content.tech_experience, 'amber');
             renderTimeline('commercial-experience', content.commercial_experience, 'slate');
+            renderCourses('dev-courses-list', content.dev_courses_list);
             renderChart(lang);
             renderPrintVersion(lang);
 
@@ -391,6 +397,14 @@
                     </div>
                 `;
                 container.innerHTML += itemHTML;
+            });
+        }
+
+        function renderCourses(containerId, coursesData) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            coursesData.forEach(course => {
+                container.innerHTML += `<li>${course}</li>`;
             });
         }
 
@@ -469,7 +483,7 @@
                 <h2>${content.print_education_title}</h2>
                 <div class="print-job">
                     <h3>${content.dev_courses_title}</h3>
-                    <p>Geração Tech (IEL Ceará, 2025 - 200h), Udemy (Jonas Schmedtmann), Origamid</p>
+                    <p>Geração Tech 2.0 (IEL & Gov. do Ceará, 2025 - 200h), Udemy (Jonas Schmedtmann), Origamid</p>
                 </div>
                  <div class="print-job">
                     <h3>${content.tech_courses_title}</h3>
