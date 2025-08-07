@@ -129,10 +129,16 @@
                     <button class="control-btn lang-pt-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300">PT</button>
                     <button class="control-btn lang-en-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300">EN</button>
                 </div>
-                <button id="print-btn" class="control-btn w-full flex items-center justify-center space-x-2 px-3 py-2 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 hover:bg-amber-500 hover:text-white">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v6a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"></path></svg>
-                    <span data-key="print_button">Imprimir</span>
-                </button>
+                <div class="space-y-2">
+                    <button id="letter-btn" class="control-btn w-full flex items-center justify-center space-x-2 px-3 py-2 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 hover:bg-amber-500 hover:text-white">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 2l7.997 3.884A2 2 0 0019 7.616V16a2 2 0 01-2 2H3a2 2 0 01-2-2V7.616a2 2 0 001.003-1.732zM10 4.268L3.58 7.616h12.84L10 4.268zM3 16h14V9H3v7z"></path></svg>
+                        <span data-key="letter_button">Ver Carta</span>
+                    </button>
+                    <button id="print-btn" class="control-btn w-full flex items-center justify-center space-x-2 px-3 py-2 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 hover:bg-amber-500 hover:text-white">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v6a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"></path></svg>
+                        <span data-key="print_button">Imprimir</span>
+                    </button>
+                </div>
                 <div class="text-center md:text-left text-slate-400 text-xs mt-4">
                     <p>&copy; 2025 Francisco Nilton Freire Filho</p>
                     <p data-key="location">Fortaleza, Ceará, Brasil</p>
@@ -230,6 +236,16 @@
         </main>
     </div>
 
+    <div id="letter-modal" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+            <button id="close-letter-btn" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+            <h2 class="text-2xl font-bold text-slate-800 mb-4" data-key="letter_title">Carta de Apresentação</h2>
+            <div class="text-slate-700 space-y-4" data-key="letter_body"></div>
+        </div>
+    </div>
+
     <div id="print-version" class="hidden p-8"></div>
 
     <script>
@@ -245,6 +261,7 @@
                 nav_languages: "Idiomas",
                 nav_contact: "Contato",
                 print_button: "Imprimir",
+                letter_button: "Ver Carta",
                 location: "Fortaleza, Ceará, Brasil",
                 summary_title: "Resumo Profissional",
                 summary_body: "Desenvolvedor Front-end com uma base sólida de mais de 10 anos em consultoria técnica e atendimento ao cliente, o que me permite traduzir necessidades complexas de usuários em interfaces intuitivas e eficientes. Especializado no ecossistema JavaScript (React, Node.js) e Quality Assurance (Cypress), estou aprofundando meus estudos em Inteligência Artificial, com foco em Modelos de Linguagem (LLMs), para otimizar o desenvolvimento de sistemas. Busco aplicar minha visão sistêmica para criar soluções de alto impacto.",
@@ -268,6 +285,8 @@
                 english_level: "Avançado (Leitura, Escrita e Conversação)",
                 contact_title: "Contato",
                 contact_intro: "Gostou do que viu? Ficarei feliz em conectar e discutir como minhas habilidades e experiência podem agregar valor à sua equipe ou projeto. Utilize um dos canais abaixo para entrar em contato.",
+                letter_title: "Carta de Apresentação",
+                letter_body: `<p>Prezado(a) Gerente de Contratação,</p><p>Escrevo com grande entusiasmo para expressar meu interesse na posição de Desenvolvedor em sua empresa. Com uma carreira consolidada de mais de uma década em consultoria técnica e atendimento ao cliente, realizei uma transição de carreira planejada e dedicada para a área de desenvolvimento de software, uma paixão que cultivo há muitos anos.</p><p>Minha trajetória profissional me proporcionou uma perspectiva única que acredito ser um grande diferencial. Atuando diretamente com clientes, aprendi a ouvir, diagnosticar problemas e traduzir necessidades complexas em soluções práticas — habilidades que hoje aplico diretamente na criação de interfaces de usuário intuitivas e eficientes. Minha experiência em Quality Assurance, utilizando ferramentas como Cypress, solidificou meu compromisso com a entrega de produtos robustos e de alta qualidade.</p><p>Para complementar essa vivência, investi pesadamente em minha formação técnica. Através de cursos intensivos como o Geração Tech 2.0 e especializações em plataformas como Udemy e Origamid, adquiri proficiência em tecnologias essenciais do ecossistema JavaScript, incluindo React, Node.js, HTML5, CSS3 e Tailwind CSS. Além disso, mantenho-me atualizado com as tendências do setor, aprofundando meus estudos em Inteligência Artificial para otimizar fluxos de trabalho de desenvolvimento.</p><p>Busco uma oportunidade onde eu possa combinar minha sólida base de experiência profissional com minhas habilidades técnicas em desenvolvimento para criar soluções que não apenas funcionem bem, mas que também ofereçam uma experiência de usuário excepcional. Tenho a convicção de que minha capacidade de comunicação, resolução de problemas e foco em resultados me permitirão contribuir significativamente para o sucesso de sua equipe.</p><p>Agradeço a sua atenção e tempo. Coloco-me à inteira disposição para uma conversa.</p><p>Atenciosamente,<br>Francisco Nilton Freire Filho</p>`,
                 tech_experience: [
                     { role: 'Desenvolvedor Front-end', company: 'MM Tecnologia', period: 'Março 2024 – Presente', details: ['Desenvolvimento e manutenção de interfaces de usuário com React e Tailwind CSS.', 'Implementação de componentes reutilizáveis e otimização de performance.', 'Consumo de APIs RESTful para integração com serviços de back-end.'] },
                     { role: 'Quality Assurance / Frontend Developer', company: 'Joyjet Digital Marketing and Tech Agency', period: 'Junho 2021 – Maio 2024', details: ['Atuação no controle de qualidade de sistemas e desenvolvimento frontend.'] }
@@ -304,6 +323,7 @@
                 nav_languages: "Languages",
                 nav_contact: "Contact",
                 print_button: "Print",
+                letter_button: "View Letter",
                 location: "Fortaleza, Ceará, Brazil",
                 summary_title: "Professional Summary",
                 summary_body: "Frontend Developer with a solid foundation of over 10 years in technical consulting and customer service, allowing me to translate complex user needs into intuitive and efficient interfaces. Specializing in the JavaScript ecosystem (React, Node.js) and Quality Assurance (Cypress), I am deepening my studies in Artificial Intelligence, with a focus on Language Models (LLMs), to optimize systems development. I seek to apply my systemic vision to create high-impact solutions.",
@@ -327,6 +347,8 @@
                 english_level: "Advanced (Reading, Writing, and Speaking)",
                 contact_title: "Contact",
                 contact_intro: "Liked what you saw? I would be happy to connect and discuss how my skills and experience can add value to your team or project. Use one of the channels below to get in touch.",
+                letter_title: "Cover Letter",
+                letter_body: `<p>Dear Hiring Manager,</p><p>I am writing with great enthusiasm to express my interest in the Developer position at your company. With a consolidated career of over a decade in technical consulting and customer service, I have made a planned and dedicated career transition to software development, a passion I have cultivated for many years.</p><p>My professional journey has given me a unique perspective that I believe is a significant differentiator. Working directly with clients, I learned to listen, diagnose problems, and translate complex needs into practical solutions—skills that I now apply directly to creating intuitive and efficient user interfaces. My experience in Quality Assurance, using tools like Cypress, has solidified my commitment to delivering robust, high-quality products.</p><p>To complement this experience, I have invested heavily in my technical training. Through intensive courses like Geração Tech 2.0 and specializations on platforms like Udemy and Origamid, I have gained proficiency in essential technologies of the JavaScript ecosystem, including React, Node.js, HTML5, CSS3, and Tailwind CSS. Furthermore, I stay current with industry trends by deepening my studies in Artificial Intelligence to optimize development workflows.</p><p>I am seeking an opportunity where I can combine my solid professional experience with my technical skills in development to create solutions that not only work well but also offer an exceptional user experience. I am confident that my communication, problem-solving, and results-oriented focus will allow me to contribute significantly to your team's success.</p><p>Thank you for your time and consideration. I am available for a conversation at your convenience.</p><p>Sincerely,<br>Francisco Nilton Freire Filho</p>`,
                 tech_experience: [
                     { role: 'Frontend Developer', company: 'MM Tecnologia', period: 'March 2024 – Present', details: ['Development and maintenance of user interfaces with React and Tailwind CSS.', 'Implementation of reusable components and performance optimization.', 'Consumption of RESTful APIs for backend integration.'] },
                     { role: 'Quality Assurance / Frontend Developer', company: 'Joyjet Digital Marketing and Tech Agency', period: 'June 2021 – May 2024', details: ['Worked in system quality control and frontend development.'] }
@@ -514,6 +536,28 @@
             });
 
             document.getElementById('print-btn').addEventListener('click', () => window.print());
+            
+            const letterModal = document.getElementById('letter-modal');
+            const letterBtn = document.getElementById('letter-btn');
+            const closeLetterBtn = document.getElementById('close-letter-btn');
+
+            letterBtn.addEventListener('click', () => {
+                letterModal.classList.remove('hidden');
+                letterModal.classList.add('flex');
+            });
+
+            closeLetterBtn.addEventListener('click', () => {
+                letterModal.classList.add('hidden');
+                letterModal.classList.remove('flex');
+            });
+            
+            letterModal.addEventListener('click', (e) => {
+                if (e.target === letterModal) {
+                    letterModal.classList.add('hidden');
+                    letterModal.classList.remove('flex');
+                }
+            });
+
 
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link, header nav a');
