@@ -61,21 +61,22 @@
             transform: translateX(0);
         }
         .tech-icon {
-            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out;
         }
         .tech-icon:hover {
             transform: scale(1.1);
-            color: #f59e0b;
         }
         
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-100px * 24)); }
+            100% { transform: translateX(calc(-96px * 8)); }
         }
-        .slider {
-            animation: scroll 30s linear infinite;
+        .slider .slide-track {
+            display: flex;
+            width: calc(96px * 16);
+            animation: scroll 20s linear infinite;
         }
-        .slider:hover {
+        .slider:hover .slide-track {
             animation-play-state: paused;
         }
 
@@ -209,7 +210,7 @@
             <section id="resumo" class="mb-16 scroll-mt-28 md:scroll-mt-20">
                 <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-amber-400 pb-2 mb-6" data-key="summary_title">Resumo Profissional</h2>
                 <div class="space-y-4 text-lg text-slate-600 leading-relaxed">
-                    <p class="p-4 bg-white rounded-lg shadow" data-key="summary_body">Desenvolvedor Front-end com uma base sólida de mais de 10 anos em consultoria técnica e atendimento ao cliente, o que me permite traduzir necessidades complexas de usuários em interfaces intuitivas e eficientes. Recentemente classificado entre os 50 melhores de mais de 5.000 inscritos no programa Geração Tech 2.0, sou especializado no ecossistema JavaScript (React, Node.js) e Quality Assurance (Cypress), e estou aprofundando meus estudos em Inteligência Artificial (LLMs) para otimizar o desenvolvimento de sistemas.</p>
+                    <p class="p-4 bg-white rounded-lg shadow" data-key="summary_body">Desenvolvedor Front-end com uma base sólida de mais de 10 anos em consultoria técnica e atendimento ao cliente, o que me permite traduzir necessidades complexas de usuários em interfaces intuitivas e eficientes. Especializado no ecossistema JavaScript (React, Node.js) e Quality Assurance (Cypress), estou aprofundando meus estudos em Inteligência Artificial, com foco em Modelos de Linguagem (LLMs), para otimizar o desenvolvimento de sistemas. Busco aplicar minha visão sistêmica para criar soluções de alto impacto.</p>
                 </div>
             </section>
 
@@ -371,7 +372,8 @@
                     'Ferramentas': 'Inglês, Pacote Office'
                 },
                 print_skills_title: "Habilidades Principais",
-                print_education_title: "Formação Principal"
+                print_education_title: "Formação Principal",
+                print_online_resume_text: "Veja a versão Online!"
             },
             en: {
                 title: "Interactive Resume | Francisco Nilton Freire Filho",
@@ -436,7 +438,8 @@
                     'Tools': 'English, Office Suite'
                 },
                 print_skills_title: "Core Skills",
-                print_education_title: "Core Education"
+                print_education_title: "Core Education",
+                print_online_resume_text: "See the Online Version!"
             }
         };
 
@@ -555,9 +558,10 @@
             printContainer.innerHTML = `
                 <h1>Francisco Nilton Freire Filho</h1>
                 <div class="print-contact">
-                    ${content.personal_info} | niltonff@hotmail.com | WhatsApp: (85) 99921-0922 | 
+                    ${content.personal_info} | niltonff@hotmail.com | WhatsApp: (85) 99921-0922 <br>
                     <a href="https://www.linkedin.com/in/nilton-freire-661797217" target="_blank">LinkedIn</a> | 
-                    <a href="https://github.com/DEVinFreire" target="_blank">GitHub</a>
+                    <a href="https://github.com/DEVinFreire" target="_blank">GitHub</a> <br>
+                    <a href="https://devinfreire.github.io/" target="_blank">https://devinfreire.github.io/</a> ${content.print_online_resume_text}
                 </div>
                 
                 <h2>${content.summary_title}</h2>
