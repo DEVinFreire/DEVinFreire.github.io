@@ -1,91 +1,109 @@
-# **Currículo Interativo \- Francisco Nilton Freire Filho (PT-BR)**
+[Português](https://www.google.com/search?q=%23portugu%C3%AAs) | [English](https://www.google.com/search?q=%23english)
 
-Bem-vindo ao repositório do meu currículo interativo\! Este projeto foi criado para apresentar minha trajetória profissional, habilidades e experiência de uma forma moderna, dinâmica e totalmente online.
+\<a name="portugues"\>\</a\>
 
-A aplicação é uma página única (SPA \- Single Page Application) que permite uma exploração fluida e envolvente da minha carreira.
+# **Currículo Interativo \- Francisco Nilton Freire Filho**
 
-### **✨ [Acesse a versão online aqui\!](https://www.google.com/search?q=https://devinfreire.github.io/) ✨**
+Este projeto é uma representação moderna e interativa do meu currículo profissional, desenvolvido como uma Single Page Application (SPA) para mostrar minhas habilidades em desenvolvimento front-end. A aplicação é totalmente responsiva e oferece uma experiência de usuário dinâmica e agradável.
 
-## **🚀 Sobre o Projeto**
+[**Acesse a versão online aqui\!**](https://devinfreire.github.io/)
 
-Este projeto transforma um currículo tradicional em uma experiência web interativa. O objetivo é facilitar a visualização da minha jornada profissional, que abrange desde uma sólida carreira na área técnica/comercial até minha atuação atual como Desenvolvedor Front-end.
+## **🚀 Funcionalidades Principais**
+
+* **Design Responsivo:** Layout adaptável com um menu lateral fixo para desktop e um menu hambúrguer funcional para dispositivos móveis.  
+* **Conteúdo Bilíngue:** Suporte completo para Português (PT) e Inglês (EN), permitindo a troca de idioma com um clique.  
+* **Linha do Tempo Interativa:** Uma linha do tempo de carreira onde cada experiência pode ser expandida para revelar mais detalhes.  
+* **Visualização de Competências:** Um gráfico de barras dinâmico, criado com Chart.js, para ilustrar minhas habilidades de forma clara.  
+* **Carrossel de Tecnologias:** No modo mobile, a seção de tecnologias se transforma em um carrossel de ícones em loop infinito para uma melhor experiência em telas menores.  
+* **Versão para Impressão:** Uma funcionalidade que formata o conteúdo em um layout de currículo tradicional, otimizado para impressão ou para salvar como PDF.  
+* **Carta de Apresentação:** Um modal exibe uma carta de apresentação detalhada.
 
 ## **🛠️ Tecnologias Utilizadas**
 
-A aplicação foi construída utilizando tecnologias web modernas, com foco em performance e design responsivo:
+Este projeto foi construído utilizando as seguintes tecnologias:
 
-* **HTML5:** Para a estrutura semântica do conteúdo.  
-* **CSS3 & Tailwind CSS:** Para um desenvolvimento ágil, responsivo e estilizações personalizadas.  
-* **JavaScript (ES6+):** Para toda a interatividade, manipulação de dados e lógica da aplicação.  
-* **Chart.js:** Biblioteca para a criação do gráfico de habilidades.
+| Tecnologia | Ícone |
+| :---- | :---- |
+| **HTML5** | \<img src="[https://www.w3.org/html/logo/downloads/HTML5\_Logo\_64.png](https://www.google.com/search?q=https://www.w3.org/html/logo/downloads/HTML5_Logo_64.png)" width="48"\> |
+| **CSS3** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3\_logo\_and\_wordmark.svg](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg)" width="48"\> |
+| **JavaScript** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png)" width="48"\> |
+| **Tailwind CSS** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind\_CSS\_Logo.svg](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg)" width="48"\> |
+| **React** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg)" width="48"\> |
+| **Node.js** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js\_logo.svg](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg)" width="48"\> |
+| **Cypress** | \<img src="[https://raw.githubusercontent.com/cypress-io/cypress-brand/master/src/cypress-logo-dark.png](https://www.google.com/search?q=https://raw.githubusercontent.com/cypress-io/cypress-brand/master/src/cypress-logo-dark.png)" width="48"\> |
+| **Chart.js** | \<img src="[https://www.chartjs.org/media/logo-title.svg](https://www.google.com/search?q=https://www.chartjs.org/media/logo-title.svg)" width="48"\> |
+| **Git/GitHub** | \<img src="[https://github.githubassets.com/images/modules/logos\_page/GitHub-Mark.png](https://www.google.com/search?q=https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)" width="48"\> |
 
-## **🌟 Funcionalidades Principais**
+## **🔧 Como Executar Localmente**
 
-* **Design Responsivo:** Interface otimizada para desktops, tablets e celulares.  
-* **Navegação Inteligente:** Menu lateral fixo em desktops e uma barra de navegação superior fixa em dispositivos móveis para acesso rápido às seções.  
-* **Linha do Tempo Interativa:** Explore minha experiência profissional em uma linha do tempo vertical, onde cada cargo pode ser expandido para exibir mais detalhes.  
-* **Suporte Multilíngue:** O conteúdo pode ser alternado instantaneamente entre Português (PT-BR) e Inglês (EN), carregando em inglês por padrão.  
-* **Versão para Impressão:** Um botão "Imprimir" gera uma versão limpa e otimizada do currículo, ideal para ser salva como PDF ou impressa.
+Como este é um projeto front-end puro, não há necessidade de um servidor ou dependências complexas.
 
-## **📂 Como Executar**
+1. **Clone o repositório:**  
+   git clone https://github.com/DEVinFreire/devinfreire.github.io.git
 
-Este projeto consiste em um único arquivo index.html. Para executá-lo localmente:
+2. **Navegue até o diretório do projeto:**  
+   cd devinfreire.github.io
 
-1. Faça o clone ou o download deste repositório.  
-2. Abra o arquivo index.html em qualquer navegador de internet moderno.
+3. **Abra o arquivo index.html** no seu navegador de preferência.
 
-## **📫 Contato**
+## **📬 Contato**
 
-Vamos nos conectar\!
+Gostou do que viu? Vamos nos conectar\!
 
-* **LinkedIn:** [linkedin.com/in/nilton-freire](https://www.linkedin.com/in/nilton-freire-661797217/)  
-* **GitHub:** [github.com/DEVinFreire](https://github.com/DEVinFreire)  
+* **LinkedIn:** [linkedin.com/in/nilton-freire-661797217](https://www.google.com/search?q=https://www.linkedin.com/in/nilton-freire-661797217)  
+* **GitHub:** [@DEVinFreire](https://www.google.com/search?q=https://github.com/DEVinFreire)  
 * **Email:** niltonff@hotmail.com
 
-*Este projeto foi desenvolvido para demonstrar minhas habilidades em desenvolvimento front-end e arquitetura de informação.*
+\<a name="english"\>\</a\>
 
-# **Interactive Resume \- Francisco Nilton Freire Filho (EN)**
+# **Interactive Resume \- Francisco Nilton Freire Filho**
 
-Welcome to my interactive resume repository\! This project was created to present my professional background, skills, and experience in a modern, dynamic, and fully online way.
+This project is a modern and interactive representation of my professional resume, developed as a Single Page Application (SPA) to showcase my front-end development skills. The application is fully responsive and offers a dynamic and pleasant user experience.
 
-The application is a Single Page Application (SPA) that allows for a fluid and engaging exploration of my career.
+[**Access the online version here\!**](https://devinfreire.github.io/)
 
-### **✨ [Access the online version here\!](https://www.google.com/search?q=https://devinfreire.github.io/) ✨**
+## **🚀 Key Features**
 
-## **🚀 About This Project**
+* **Responsive Design:** Adaptive layout with a fixed sidebar for desktop and a functional hamburger menu for mobile devices.  
+* **Bilingual Content:** Full support for Portuguese (PT) and English (EN), allowing language switching with a single click.  
+* **Interactive Timeline:** A career timeline where each experience can be expanded to reveal more details.  
+* **Skills Visualization:** A dynamic bar chart, created with Chart.js, to clearly illustrate my skills.  
+* **Technologies Carousel:** In mobile view, the technologies section transforms into an infinite loop icon carousel for a better experience on smaller screens.  
+* **Print Version:** A feature that formats the content into a traditional resume layout, optimized for printing or saving as a PDF.  
+* **Cover Letter:** A modal displays a detailed cover letter.
 
-This project transforms a traditional resume into an interactive web experience. The goal is to make it easier to visualize my professional journey, which ranges from a solid career in the technical/commercial area to my current role as a Front-end Developer.
+## **🛠️ Tech Stack**
 
-## **🛠️ Technologies Used**
+This project was built using the following technologies:
 
-The application was built using modern web technologies, with a focus on performance and responsive design:
+| Technology | Icon |
+| :---- | :---- |
+| **HTML5** | \<img src="[https://www.w3.org/html/logo/downloads/HTML5\_Logo\_64.png](https://www.google.com/search?q=https://www.w3.org/html/logo/downloads/HTML5_Logo_64.png)" width="48"\> |
+| **CSS3** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3\_logo\_and\_wordmark.svg](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg)" width="48"\> |
+| **JavaScript** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png)" width="48"\> |
+| **Tailwind CSS** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind\_CSS\_Logo.svg](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg)" width="48"\> |
+| **React** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg)" width="48"\> |
+| **Node.js** | \<img src="[https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js\_logo.svg](https://www.google.com/search?q=https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg)" width="48"\> |
+| **Cypress** | \<img src="[https://raw.githubusercontent.com/cypress-io/cypress-brand/master/src/cypress-logo-dark.png](https://www.google.com/search?q=https://raw.githubusercontent.com/cypress-io/cypress-brand/master/src/cypress-logo-dark.png)" width="48"\> |
+| **Chart.js** | \<img src="[https://www.chartjs.org/media/logo-title.svg](https://www.google.com/search?q=https://www.chartjs.org/media/logo-title.svg)" width="48"\> |
+| **Git/GitHub** | \<img src="[https://github.githubassets.com/images/modules/logos\_page/GitHub-Mark.png](https://www.google.com/search?q=https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)" width="48"\> |
 
-* **HTML5:** For the semantic structure of the content.  
-* **CSS3 & Tailwind CSS:** For agile, responsive development and custom styling.  
-* **JavaScript (ES6+):** For all interactivity, data manipulation, and application logic.  
-* **Chart.js:** A library for creating the skills chart.
+## **🔧 How to Run Locally**
 
-## **🌟 Main Features**
+As this is a pure front-end project, there is no need for a server or complex dependencies.
 
-* **Responsive Design:** Interface optimized for desktops, tablets, and mobile devices.  
-* **Smart Navigation:** A fixed sidebar on desktops and a fixed top navigation bar on mobile devices for quick access to sections.  
-* **Interactive Timeline:** Explore my professional experience on a vertical timeline, where each role can be expanded to show more details.  
-* **Multilingual Support:** The content can be instantly switched between Portuguese (PT-BR) and English (EN), loading in English by default.  
-* **Print-Friendly Version:** A "Print" button generates a clean, optimized version of the resume, ideal for saving as a PDF or printing.
+1. **Clone the repository:**  
+   git clone https://github.com/DEVinFreire/devinfreire.github.io.git
 
-## **📂 How to Run**
+2. **Navigate to the project directory:**  
+   cd devinfreire.github.io
 
-This project consists of a single index.html file. To run it locally:
+3. **Open the index.html file** in your preferred browser.
 
-1. Clone or download this repository.  
-2. Open the index.html file in any modern web browser.
+## **📬 Contact**
 
-## **📫 Contact**
+Liked what you saw? Let's connect\!
 
-Let's connect\!
-
-* **LinkedIn:** [linkedin.com/in/nilton-freire](https://www.linkedin.com/in/nilton-freire-661797217/)  
-* **GitHub:** [github.com/DEVinFreire](https://github.com/DEVinFreire)  
+* **LinkedIn:** [linkedin.com/in/nilton-freire-661797217](https://www.google.com/search?q=https://www.linkedin.com/in/nilton-freire-661797217)  
+* **GitHub:** [@DEVinFreire](https://www.google.com/search?q=https://github.com/DEVinFreire)  
 * **Email:** niltonff@hotmail.com
-
-*This project was developed to demonstrate my skills in front-end development and information architecture.*
