@@ -72,22 +72,6 @@ modern way.
 > ⚡ Não é necessário servidor backend, todo o conteúdo é estático.\
 > ⚡ No backend required, the project is fully static.
 
-------------------------------------------------------------------------
-
-## 📸 Prévia \| Preview
-
-*(adicione aqui um print da página rodando no navegador / add a
-screenshot of the page running in the browser)*
-
-------------------------------------------------------------------------
-
-## 📄 Licença \| License
-
-Este projeto está sob a licença **MIT**.\
-Sinta-se livre para usar, modificar e compartilhar.
-
-This project is licensed under the **MIT License**.\
-Feel free to use, modify, and share.
 
 ------------------------------------------------------------------------
 
