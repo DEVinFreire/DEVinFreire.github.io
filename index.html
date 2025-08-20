@@ -76,7 +76,7 @@
             width: calc(96px * 16);
             animation: scroll 20s linear infinite;
         }
-        .slider:hover {
+        .slider:hover .slide-track {
             animation-play-state: paused;
         }
 
@@ -318,7 +318,7 @@
             apiKey: "AIzaSyAtxhhFe_yDFehQmI3yjR2QiaBn0Ds_9X8",
             authDomain: "curriculum-4871f.firebaseapp.com",
             projectId: "curriculum-4871f",
-            storageBucket: "curriculum-4871f.firebasestorage.app",
+            storageBucket: "curriculum-4871f.appspot.com",
             messagingSenderId: "763519148648",
             appId: "1:763519148648:web:f3fa8c4a14ff530bb951dd"
         };
@@ -328,10 +328,15 @@
         const auth = getAuth(app);
 
         async function updateVisitorCount() {
+            const countSpan = document.getElementById('visitor-count');
+            if (!countSpan) {
+                console.error("Elemento 'visitor-count' não encontrado.");
+                return;
+            }
+
             try {
                 await signInAnonymously(auth);
                 const counterRef = doc(db, "counters", "visitors");
-                const countSpan = document.getElementById('visitor-count');
 
                 if (!localStorage.getItem('hasVisited')) {
                     await setDoc(counterRef, { count: increment(1) }, { merge: true });
@@ -346,7 +351,6 @@
                 }
             } catch (error) {
                 console.error("Erro ao atualizar contador de visitantes:", error);
-                const countSpan = document.getElementById('visitor-count');
                 countSpan.textContent = 'N/A';
             }
         }
@@ -373,7 +377,7 @@
                 location: "Fortaleza, Ceará, Brasil",
                 tech_stack_title: "Principais Tecnologias",
                 summary_title: "Resumo Profissional",
-                summary_body: "Desenvolvedor Front-end com uma base sólida de mais de 10 anos em consultoria técnica, o que me permite traduzir necessidades complexas de usuários em interfaces intuitivas e eficientes. Minha experiência prática inclui atuação como Desenvolvedor Frontend e Quality Assurance na Joyjet, e mais recentemente como Desenvolvedor Frontend na MM Tecnologia. Destaquei-me ao ser <strong class='text-amber-500'>classificado entre os 50 melhores de mais de 5.000 inscritos no programa Geração Tech 2.0</strong>. Atualmente, aprofundo meus estudos em Inteligência Artificial (LLMs) para otimizar o desenvolvimento de sistemas, buscando sempre aplicar minha visão sistêmica para criar soluções de alto impacto.",
+                summary_body: "Desenvolvedor Front-end com uma base sólida de mais de 10 anos em consultoria técnica, o que me permite traduzir necessidades complexas de usuários em interfaces intuitivas. Iniciei minha transição de carreira na C2A Tecnologia, focando no aprendizado de JavaScript, HTML e CSS. Em seguida, na Joyjet, atuei como Desenvolvedor Frontend e Quality Assurance (QA), e atualmente na MM Tecnologia, aprimoro minhas habilidades com React e Tailwind CSS. Destaquei-me ao ser <strong class='text-amber-500'>classificado entre os 50 melhores de mais de 5.000 inscritos no programa Geração Tech 2.0</strong>. Continuo aprofundando meus estudos em Inteligência Artificial (LLMs) para otimizar o desenvolvimento de sistemas.",
                 experience_title: "Linha do Tempo da Carreira",
                 experience_intro: "Abaixo, você pode explorar minha jornada profissional de forma interativa. A linha do tempo está dividida em duas fases principais: minha carreira consolidada na área técnica e comercial, e minha atual carreira em tecnologia. Clique em cada cargo para expandir e ver os detalhes e responsabilidades. Esta visualização foi projetada para demonstrar a evolução e a amplitude das minhas competências ao longo dos anos.",
                 tech_career_title: "Carreira em Tecnologia",
