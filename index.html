@@ -156,7 +156,7 @@
                     </button>
                 </div>
                 <div class="text-center md:text-left text-slate-400 text-xs mt-4">
-                    <p data-key="visitor_count">Visitantes: <span id="visitor-count">...</span></p>
+                    <p><span data-key="visitor_count">Visitantes:</span> <span id="visitor-count"></span></p>
                     <p>&copy; 2025 Francisco Nilton Freire Filho</p>
                     <p data-key="location">Fortaleza, Ceará, Brasil</p>
                 </div>
@@ -295,9 +295,55 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getFirestore, doc, getDoc, setDoc, increment } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import { getFirestore, doc, getDoc, setDoc, increment, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+        const firebaseConfig = {
+            apiKey: "AIzaSyAtxhhFe_yDFehQmI3yjR2QiaBn0Ds_9X8",
+            authDomain: "curriculum-4871f.firebaseapp.com",
+            projectId: "curriculum-4871f",
+            storageBucket: "curriculum-4871f.appspot.com",
+            messagingSenderId: "763519148648",
+            appId: "1:763519148648:web:f3fa8c4a14ff530bb951dd"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        async function updateVisitorCount() {
+            const visitorCountElement = document.getElementById('visitor-count');
+            try {
+                await signInAnonymously(auth);
+                const counterRef = doc(db, "visitors", "counter");
+                
+                if (!sessionStorage.getItem('visitorCounted')) {
+                    await runTransaction(db, async (transaction) => {
+                        const counterDoc = await transaction.get(counterRef);
+                        if (!counterDoc.exists()) {
+                            transaction.set(counterRef, { count: 1 });
+                        } else {
+                            const newCount = (counterDoc.data().count || 0) + 1;
+                            transaction.update(counterRef, { count: newCount });
+                        }
+                    });
+                    sessionStorage.setItem('visitorCounted', 'true');
+                }
+
+                const finalSnap = await getDoc(counterRef);
+                if (finalSnap.exists() && finalSnap.data().count !== undefined) {
+                    visitorCountElement.textContent = finalSnap.data().count;
+                } else {
+                    visitorCountElement.textContent = '0'; 
+                }
+            } catch (error) {
+                console.error("Error updating visitor count:", error);
+                if (visitorCountElement) {
+                    visitorCountElement.textContent = 'N/A';
+                }
+            }
+        }
+        
         const i18n = {
             pt: {
                 title: "Currículo Interativo | Francisco Nilton Freire Filho",
@@ -338,7 +384,7 @@
                 contact_title: "Contato",
                 contact_intro: "Gostou do que viu? Ficarei feliz em conectar e discutir como minhas habilidades e experiência podem agregar valor à sua equipe ou projeto. Utilize um dos canais abaixo para entrar em contato.",
                 letter_title: "Carta de Apresentação",
-                letter_body: `<p>Prezado(a) Gerente de Contratação,</p><p>Escrevo com grande entusiasmo para expressar meu interesse na posição de Desenvolvedor em sua empresa. Com uma carreira consolidada de mais de uma década em consultoria técnica e atendimento ao cliente, realizei uma transição de carreira planejada e dedicada para a área de desenvolvimento de software, uma paixão que cultivo há muitos anos.</p><p>Minha trajetória profissional me proporcionou uma perspectiva única que acredito ser um grande diferencial. Atuando diretamente com clientes, aprendi a ouvir, diagnosticar problemas e traduzir necessidades complexas em soluções práticas — habilidades que hoje aplico diretamente na criação de interfaces de usuário intuitivas e eficientes. Minha experiência em Quality Assurance, utilizando ferramentas como Cypress, solidificou meu compromisso com a entrega de produtos robustos e de alta qualidade.</p><p>Para complementar essa vivência, investi pesadamente em minha formação técnica. Através de cursos intensivos como o Geração Tech 2.0, no qual obtive classificação entre os 50 melhores, e especializações em plataformas como Udemy e Origamid, adquiri proficiência em tecnologias essenciais do ecossistema JavaScript, incluindo React, Node.js, HTML5, CSS3 e Tailwind CSS. Além disso, mantenho-me atualizado com as tendências do setor, aprofundando meus estudos em Inteligência Artificial para otimizar fluxos de trabalho de desenvolvimento.</p><p>Busco uma oportunidade onde eu possa combinar minha sólida base de experiência profissional com minhas habilidades técnicas em desenvolvimento para criar soluções que não apenas funcionem bem, mas que também ofereçam uma experiência de usuário excepcional. Tenho a convicção de que minha capacidade de comunicação, resolução de problemas e foco em resultados me permitirão contribuir significativamente para o sucesso de sua equipe.</p><p>Agradeço a sua atenção e tempo. Coloco-me à inteira disposição para uma conversa.</p><p>Atenciosamente,<br>Francisco Nilton Freire Filho</p>`,
+                letter_body: "<p>Prezado(a) Gerente de Contratação,</p><p>Escrevo com grande entusiasmo para expressar meu interesse na posição de Desenvolvedor em sua empresa. Com uma carreira consolidada de mais de uma década em consultoria técnica e atendimento ao cliente, realizei uma transição de carreira planejada e dedicada para a área de desenvolvimento de software, uma paixão que cultivo há muitos anos.</p><p>Minha trajetória profissional me proporcionou uma perspectiva única que acredito ser um grande diferencial. Atuando diretamente com clientes, aprendi a ouvir, diagnosticar problemas e traduzir necessidades complexas em soluções práticas — habilidades que hoje aplico diretamente na criação de interfaces de usuário intuitivas e eficientes. Minha experiência em Quality Assurance, utilizando ferramentas como Cypress, solidificou meu compromisso com a entrega de produtos robustos e de alta qualidade.</p><p>Para complementar essa vivência, investi pesadamente em minha formação técnica. Através de cursos intensivos como o Geração Tech 2.0, no qual obtive classificação entre os 50 melhores, e especializações em plataformas como Udemy e Origamid, adquiri proficiência em tecnologias essenciais do ecossistema JavaScript, incluindo React, Node.js, HTML5, CSS3 e Tailwind CSS. Além disso, mantenho-me atualizado com as tendências do setor, aprofundando meus estudos em Inteligência Artificial para otimizar fluxos de trabalho de desenvolvimento.</p><p>Busco uma oportunidade onde eu possa combinar minha sólida base de experiência profissional com minhas habilidades técnicas em desenvolvimento para criar soluções que não apenas funcionem bem, mas que também ofereçam uma experiência de usuário excepcional. Tenho a convicção de que minha capacidade de comunicação, resolução de problemas e foco em resultados me permitirão contribuir significativamente para o sucesso de sua equipe.</p><p>Agradeço a sua atenção e tempo. Coloco-me à inteira disposição para uma conversa.</p><p>Atenciosamente,<br>Francisco Nilton Freire Filho</p>",
                 tech_experience: [
                     { role: 'Desenvolvedor Front-end', company: 'MM Tecnologia', period: 'Março 2024 – Presente', details: ['Desenvolvimento e manutenção de interfaces de usuário com React e Tailwind CSS.', 'Implementação de componentes reutilizáveis e otimização de performance.', 'Consumo de APIs RESTful para integração com serviços de back-end.'] },
                     { role: 'Quality Assurance / Frontend Developer', company: 'Joyjet Digital Marketing and Tech Agency', period: 'Junho 2021 – Maio 2024', details: ['Atuação no controle de qualidade de sistemas e desenvolvimento frontend.'] },
@@ -406,7 +452,7 @@
                 contact_title: "Contact",
                 contact_intro: "Liked what you saw? I would be happy to connect and discuss how my skills and experience can add value to your team or project. Use one of the channels below to get in touch.",
                 letter_title: "Cover Letter",
-                letter_body: `<p>Dear Hiring Manager,</p><p>I am writing with great enthusiasm to express my interest in the Developer position at your company. With a consolidated career of over a decade in technical consulting and customer service, I have made a planned and dedicated career transition to software development, a passion I have cultivated for many years.</p><p>My professional journey has given me a unique perspective that I believe is a significant differentiator. Working directly with clients, I learned to listen, diagnose problems, and translate complex needs into practical solutions—skills that I now apply directly to creating intuitive and efficient user interfaces. My experience in Quality Assurance, using tools like Cypress, has solidified my commitment to delivering robust, high-quality products.</p><p>To complement this experience, I have invested heavily in my technical training. Through intensive courses like Geração Tech 2.0, where I ranked among the top 50 participants, and specializations on platforms like Udemy and Origamid, I have gained proficiency in essential technologies of the JavaScript ecosystem, including React, Node.js, HTML5, CSS3, and Tailwind CSS. Furthermore, I stay current with industry trends by deepening my studies in Artificial Intelligence to optimize development workflows.</p><p>I am seeking an opportunity where I can combine my solid professional experience with my technical skills in development to create solutions that not only work well but also offer an exceptional user experience. I am confident that my communication, problem-solving, and results-oriented focus will allow me to contribute significantly to your team's success.</p><p>Thank you for your time and consideration. I am available for a conversation at your convenience.</p><p>Sincerely,<br>Francisco Nilton Freire Filho</p>`,
+                letter_body: "<p>Dear Hiring Manager,</p><p>I am writing with great enthusiasm to express my interest in the Developer position at your company. With a consolidated career of over a decade in technical consulting and customer service, I have made a planned and dedicated career transition to software development, a passion I have cultivated for many years.</p><p>My professional journey has given me a unique perspective that I believe is a significant differentiator. Working directly with clients, I learned to listen, diagnose problems, and translate complex needs into practical solutions—skills that I now apply directly to creating intuitive and efficient user interfaces. My experience in Quality Assurance, using tools like Cypress, has solidified my commitment to delivering robust, high-quality products.</p><p>To complement this experience, I have invested heavily in my technical training. Through intensive courses like Geração Tech 2.0, where I ranked among the top 50 participants, and specializations on platforms like Udemy and Origamid, I have gained proficiency in essential technologies of the JavaScript ecosystem, including React, Node.js, HTML5, CSS3, and Tailwind CSS. Furthermore, I stay current with industry trends by deepening my studies in Artificial Intelligence to optimize development workflows.</p><p>I am seeking an opportunity where I can combine my solid professional experience with my technical skills in development to create solutions that not only work well but also offer an exceptional user experience. I am confident that my communication, problem-solving, and results-oriented focus will allow me to contribute significantly to your team's success.</p><p>Thank you for your time and consideration. I am available for a conversation at your convenience.</p><p>Sincerely,<br>Francisco Nilton Freire Filho</p>",
                 tech_experience: [
                     { role: 'Frontend Developer', company: 'MM Tecnologia', period: 'March 2024 – Present', details: ['Development and maintenance of user interfaces with React and Tailwind CSS.', 'Implementation of reusable components and performance optimization.', 'Consumption of RESTful APIs for backend integration.'] },
                     { role: 'Quality Assurance / Frontend Developer', company: 'Joyjet Digital Marketing and Tech Agency', period: 'June 2021 – May 2024', details: ['Worked in system quality control and frontend development.'] },
@@ -421,12 +467,12 @@
                     { role: 'Distributor / Customer Relations', company: 'Limpáx', period: 'July 2010 – April 2011 & March 2009 – October 2009', details: ['Product distribution, customer contact, and account management.'] },
                     { role: 'Maintenance Technician', company: 'Fort Segurança', period: 'March 2010 – May 2010', details: ['Assembly, maintenance, and monitoring of computers.'] },
                     { role: 'Network Administrator / Maintenance', company: 'Center Line', period: 'December 2009 – February 2010', details: ['Computer maintenance and network administration.'] },
-                    { role: 'Telemarketing Operator / Quality Control', company: 'Contax', period: 'January 2008 – January 2009', details: ['Worked as a telemarketing operator, retention agent, and in quality control.'] }
+                    { role: 'Telemarketing Operator / Quality Control', company: 'Contax', period: 'January 2008 – Janeiro 2009', details: ['Worked as a telemarketing operator, retention agent, and in quality control.'] }
                 ],
                 chart_labels: ['Frontend', 'Technical', 'Management & Sales', 'Tools'],
                 chart_tooltip_skills: {
                     'Frontend': 'HTML, CSS, JS, React',
-                    'Technical': 'Consulting, QA, Hardware, Networks',
+                    'Técnicas': 'Consulting, QA, Hardware, Networks',
                     'Management & Sales': 'Leadership, Customer Service',
                     'Tools': 'English, Office Suite'
                 },
@@ -588,6 +634,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            updateVisitorCount();
             renderContent('en');
 
             document.querySelectorAll('.lang-pt-btn').forEach(btn => {
@@ -663,7 +710,7 @@
             });
         });
 
-        function toggleDetails(element) {
+        window.toggleDetails = function(element) {
             const content = element.querySelector('.timeline-item-content');
             content.classList.toggle('open');
             if (content.classList.contains('open')) {
