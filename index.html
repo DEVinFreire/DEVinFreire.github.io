@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,7 +101,6 @@
             #print-version a { text-decoration: none; color: inherit; }
         }
 
-        /* Dark Mode */
         .dark body {
             background-color: #1e293b;
             color: #e2e8f0;
@@ -151,18 +150,18 @@
 
     <header class="md:hidden bg-slate-800/95 backdrop-blur-sm text-white sticky top-0 z-30 shadow-lg no-print">
         <div class="p-4 flex justify-between items-center">
-            <button id="menu-btn" class="z-30">
+            <button id="menu-btn" class="z-30" aria-label="Abrir menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
-            <div class="flex items-center space-x-2">
-                <button class="control-btn letter-btn p-2 rounded-md border border-slate-500 text-slate-300">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 2l7.997 3.884A2 2 0 0019 7.616V16a2 2 0 01-2 2H3a2 2 0 01-2-2V7.616a2 2 0 001.003-1.732zM10 4.268L3.58 7.616h12.84L10 4.268zM3 16h14V9H3v7z"></path></svg>
+            <div id="header-controls" class="flex items-center space-x-2">
+                <button class="control-btn letter-btn p-2 rounded-md border border-slate-500 text-slate-300" aria-label="Ver carta de apresentação">
+                    <svg class="w-5 h-5 pointer-events-none" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 2l7.997 3.884A2 2 0 0019 7.616V16a2 2 0 01-2 2H3a2 2 0 01-2-2V7.616a2 2 0 001.003-1.732zM10 4.268L3.58 7.616h12.84L10 4.268zM3 16h14V9H3v7z"></path></svg>
                 </button>
-                <button class="control-btn lang-pt-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300">PT</button>
-                <button class="control-btn lang-en-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300">EN</button>
-                <button id="theme-toggle-mobile" class="control-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 w-[65px] text-center">
-                    <span id="theme-toggle-light-text-mobile" data-key="theme_light" class="hidden">Light</span>
-                    <span id="theme-toggle-dark-text-mobile" data-key="theme_dark">Dark</span>
+                <button class="control-btn lang-pt-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300" data-lang="pt">PT</button>
+                <button class="control-btn lang-en-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300" data-lang="en">EN</button>
+                <button id="theme-toggle-mobile" class="control-btn theme-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 w-[65px] text-center">
+                    <span class="theme-light-text pointer-events-none" data-key="theme_light">Light</span>
+                    <span class="theme-dark-text pointer-events-none" data-key="theme_dark">Dark</span>
                 </button>
             </div>
         </div>
@@ -189,23 +188,23 @@
                     </ul>
                 </nav>
             </div>
-            <div class="mt-auto pt-10">
+            <div id="sidebar-controls" class="mt-auto pt-10">
                  <div class="hidden md:flex justify-center md:justify-start items-center space-x-2 mb-4">
-                    <button class="control-btn lang-pt-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300">PT</button>
-                    <button class="control-btn lang-en-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300">EN</button>
-                    <button id="theme-toggle" class="control-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 w-[65px] text-center">
-                        <span id="theme-toggle-light-text" data-key="theme_light" class="hidden">Light</span>
-                        <span id="theme-toggle-dark-text" data-key="theme_dark">Dark</span>
+                    <button class="control-btn lang-pt-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300" data-lang="pt">PT</button>
+                    <button class="control-btn lang-en-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300" data-lang="en">EN</button>
+                    <button id="theme-toggle" class="control-btn theme-btn px-3 py-1 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 w-[65px] text-center">
+                        <span class="theme-light-text pointer-events-none" data-key="theme_light">Light</span>
+                        <span class="theme-dark-text pointer-events-none" data-key="theme_dark">Dark</span>
                     </button>
                 </div>
                 <div class="space-y-2">
                     <button class="control-btn letter-btn w-full hidden md:flex items-center justify-center space-x-2 px-3 py-2 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 hover:bg-amber-500 hover:text-white">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 2l7.997 3.884A2 2 0 0019 7.616V16a2 2 0 01-2 2H3a2 2 0 01-2-2V7.616a2 2 0 001.003-1.732zM10 4.268L3.58 7.616h12.84L10 4.268zM3 16h14V9H3v7z"></path></svg>
-                        <span data-key="letter_button">Ver Carta</span>
+                        <svg class="w-4 h-4 pointer-events-none" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 2l7.997 3.884A2 2 0 0019 7.616V16a2 2 0 01-2 2H3a2 2 0 01-2-2V7.616a2 2 0 001.003-1.732zM10 4.268L3.58 7.616h12.84L10 4.268zM3 16h14V9H3v7z"></path></svg>
+                        <span data-key="letter_button" class="pointer-events-none">Ver Carta</span>
                     </button>
                     <button id="print-btn" class="control-btn w-full flex items-center justify-center space-x-2 px-3 py-2 text-sm font-semibold rounded-md border border-slate-500 text-slate-300 hover:bg-amber-500 hover:text-white">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v6a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"></path></svg>
-                        <span data-key="print_button">Imprimir</span>
+                        <svg class="w-4 h-4 pointer-events-none" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v6a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"></path></svg>
+                        <span data-key="print_button" class="pointer-events-none">Imprimir</span>
                     </button>
                 </div>
                 <div class="text-center md:text-left text-slate-400 text-xs mt-4">
@@ -221,24 +220,16 @@
             <section id="tech-stack" class="mb-16 scroll-mt-28 md:scroll-mt-20">
                 <h2 class="text-3xl font-bold text-slate-800 border-b-4 border-amber-400 pb-2 mb-6" data-key="tech_stack_title">Principais Tecnologias</h2>
                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg overflow-hidden relative">
-<div class="md:hidden">
-                        <div class="flex slider space-x-10">
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#323330" rx="85.33"/><path fill="#F0DB4F" d="M32 32v448h448V32Zm240 348c0 43.61-25.76 64.87-63.05 64.87c-33.68 0-53.23-17.44-63.15-38.49l34.28-20.75c6.61 11.73 11.63 21.65 26.06 21.65c12 0 21.86-5.41 21.86-26.46V240h44Zm99.35 63.87c-39.09 0-64.35-17.64-76.68-42L329 382c9 14.74 20.75 24.56 41.5 24.56c17.44 0 27.57-7.72 27.57-19.75c0-14.43-10.43-19.54-29.68-28l-10.52-4.52c-30.38-12.92-50.52-29.16-50.52-63.45c0-31.57 24.05-54.63 61.64-54.63c26.77 0 46 8.32 59.85 32.68L396 290c-7.22-12.93-15-18-27.06-18c-12.33 0-20.15 7.82-20.15 18c0 12.63 7.82 17.74 25.86 25.56l10.52 4.51c35.79 15.34 55.94 31 55.94 66.16c.01 37.9-29.76 57.64-69.76 57.64"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#61DAFB"><path d="M14.448 16.24a22 22 0 0 1-1.747 2.175c1.673 1.623 3.228 2.383 4.091 1.884c.863-.498.982-2.225.413-4.484c-.853.19-1.779.334-2.757.424m-1.31.087a28 28 0 0 1-2.275 0c.376.492.758.948 1.137 1.363q.571-.623 1.138-1.364m5.04-7.894c2.665.764 4.406 2.034 4.406 3.567s-1.74 2.803-4.405 3.567c.67 2.69.44 4.832-.887 5.598c-1.327.767-3.297-.105-5.292-2.031c-1.994 1.925-3.964 2.798-5.291 2.031s-1.557-2.908-.887-5.598C3.157 14.803 1.417 13.533 1.417 12s1.74-2.803 4.405-3.567c-.67-2.69-.44-4.832.887-5.599c1.327-.766 3.297.106 5.291 2.032c1.995-1.926 3.965-2.798 5.292-2.032c1.327.767 1.557 2.909.887 5.599m-.973-.248c.57-2.26.45-3.986-.413-4.485c-.863-.498-2.418.262-4.09 1.885a22 22 0 0 1 1.746 2.175c.978.09 1.904.234 2.757.425m-10.41 7.63c-.569 2.26-.45 3.986.414 4.484c.863.498 2.418-.261 4.09-1.884a22 22 0 0 1-1.746-2.176a22 22 0 0 1-2.757-.425m4.068-8.142a28 28 0 0 1 2.275 0A21 21 0 0 0 12 6.31q-.57.625-1.137 1.364m-1.31.087a22 22 0 0 1 1.746-2.175C9.627 3.962 8.072 3.202 7.21 3.7c-.863.499-.983 2.226-.413 4.485c.853-.19 1.779-.334 2.757-.425m4.34 7.52A25.4 25.4 0 0 0 15.788 12a25.4 25.4 0 0 0-1.893-3.28a25.4 25.4 0 0 0-3.787 0A25.4 25.4 0 0 0 8.213 12a25.4 25.4 0 0 0 1.894 3.28a25.4 25.4 0 0 0 3.787 0m1.285-.132q.924-.12 1.75-.303a21 21 0 0 0-.612-1.667a28 28 0 0 1-1.137 1.97M8.823 8.851q-.924.121-1.75.304q.255.806.613 1.667a28 28 0 0 1 1.137-1.97m-1.75 5.994q.826.182 1.75.303a28 28 0 0 1-1.137-1.97a21 21 0 0 0-.613 1.667m-.978-.245c.262-.834.6-1.708 1.01-2.6a22 22 0 0 1-1.01-2.6c-2.241.636-3.677 1.604-3.677 2.6s1.436 1.963 3.677 2.6M16.93 9.155q-.827-.183-1.75-.304a28 28 0 0 1 1.137 1.97q.357-.86.613-1.666m.977.245c-.26.834-.6 1.708-1.01 2.6c.41.892.75 1.766 1.01 2.6c2.242-.637 3.678-1.604 3.678-2.6s-1.436-1.963-3.678-2.6M12 13.879a1.88 1.88 0 1 1 0-3.758a1.88 1.88 0 0 1 0 3.758"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="#68A063"><path d="M63.999 0a5.6 5.6 0 0 0-2.789.744L11.445 29.646L28.852 61.58L64.592.053A8 8 0 0 0 64.003 0Zm2.316.605v.002l35.194 60.577l16.545-30.449a5.5 5.5 0 0 0-1.028-.817L91.38 15.024L66.7.754h-.007c-.12-.061-.252-.099-.378-.15Zm-1.024.248L29.417 62.616l35.579 65.278c.1-.02.198-.023.297-.05l35.653-65.624ZM10.586 30.176c-1.502 1.031-2.35 2.752-2.35 4.595v58.478c0 .93.254 1.838.684 2.645l19.34-33.293Zm108.161 1.4l-16.643 30.629l17.66 30.398V34.77c0-1.15-.382-2.265-1.017-3.195zm-17.204 31.667l-34.808 64.062l.055-.028l50.243-29.183l.004-.002c1.402-.793 2.3-2.155 2.604-3.693zm-72.718.394L9.545 96.832c.406.5.885.936 1.43 1.266l.001.004l49.702 28.866l.53.305l.006.002h.002c.257.151.528.266.798.372q.216.082.433.146c.125.037.251.062.376.089q.362.077.727.108c.118.01.237.01.355.01z"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="#4a4a4c"><path fill-rule="evenodd" d="M63.11 16c-27.02 0-48.887 21.867-48.887 48.89c0 27.02 21.866 48.887 48.886 48.887c27.023 0 48.891-21.866 48.891-48.886C112 37.868 90.131 16 63.11 16zM46.222 42.133c2.843 0 5.511.355 7.644 1.246c2.313.887 4.446 2.133 6.578 3.91l-4.98 6.754c-1.422-1.066-2.844-1.777-4.086-2.309c-1.246-.535-2.844-.71-4.27-.71c-6.043 0-9.066 4.62-9.066 14.042c0 4.801.71 8.18 2.312 10.133c1.602 2.133 3.735 3.024 6.754 3.024c1.426 0 2.848-.18 4.09-.711c1.246-.535 2.668-1.246 4.446-2.313l4.976 7.114c-4.086 3.373-8.71 4.976-14.043 4.976c-4.266 0-7.824-.89-11.023-2.668c-3.02-1.777-5.512-4.441-7.11-7.82c-1.6-3.38-2.488-7.29-2.488-11.91c0-4.446.887-8.536 2.488-11.914c1.598-3.555 4.09-6.223 7.11-8.176c3.023-1.602 6.578-2.668 10.668-2.668zm14.933 1.601h12.266l8.535 35.375l9.066-35.375h11.91L89.067 86.398C87.29 91.91 84.621 96 80.891 99.023c-3.735 3.02-8.711 4.622-14.934 5.157L64.711 96c4.09-.535 7.11-1.422 9.066-2.844c.711-.535 2.133-2.133 2.133-2.133L61.156 43.734z"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" fill="#181717" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></div>
-                        <div class="tech-icon text-center"><svg class="h-12 w-12 mx-auto text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M.946 0L2.23 14.4L7.992 16l5.777-1.602L15.055 0zM12.26 4.71H5.502l.161 1.809H12.1l-.485 5.422l-3.623 1.004l-3.618-1.004l-.247-2.774H5.9l.126 1.41l1.967.53l.004-.001l1.968-.531l.204-2.29H4.048l-.476-5.341h8.847l-.158 1.766z"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="h-12 w-12 mx-auto text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="m64 32l35 403.22L255.77 480L413 435.15L448 32Zm290.68 334.9L256.07 395l-98.46-28.24l-6.75-77.76h48.26l3.43 39.56l53.59 15.16l.13.28l53.47-14.85l5.64-64.15H203l-4-50h120.65l4.35-51H140l-4-49h240.58Z"></path></svg></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12.001 4.8q-4.8 0-6 4.8q1.8-2.4 4.2-1.8c.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12q4.8 0 6-4.8q-1.8 2.4-4.2 1.8c-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8m-6 7.2q-4.8 0-6 4.8q1.8-2.4 4.2-1.8c.913.228 1.565.89 2.288 1.624c1.177 1.194 2.538 2.576 5.512 2.576q4.8 0 6-4.8q-1.8 2.4-4.2 1.8c-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#323330" rx="85.33"/><path fill="#F0DB4F" d="M32 32v448h448V32Zm240 348c0 43.61-25.76 64.87-63.05 64.87c-33.68 0-53.23-17.44-63.15-38.49l34.28-20.75c6.61 11.73 11.63 21.65 26.06 21.65c12 0 21.86-5.41 21.86-26.46V240h44Zm99.35 63.87c-39.09 0-64.35-17.64-76.68-42L329 382c9 14.74 20.75 24.56 41.5 24.56c17.44 0 27.57-7.72 27.57-19.75c0-14.43-10.43-19.54-29.68-28l-10.52-4.52c-30.38-12.92-50.52-29.16-50.52-63.45c0-31.57 24.05-54.63 61.64-54.63c26.77 0 46 8.32 59.85 32.68L396 290c-7.22-12.93-15-18-27.06-18c-12.33 0-20.15 7.82-20.15 18c0 12.63 7.82 17.74 25.86 25.56l10.52 4.51c35.79 15.34 55.94 31 55.94 66.16c.01 37.9-29.76 57.64-69.76 57.64"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#61DAFB"><path d="M14.448 16.24a22 22 0 0 1-1.747 2.175c1.673 1.623 3.228 2.383 4.091 1.884c.863-.498.982-2.225.413-4.484c-.853.19-1.779.334-2.757.424m-1.31.087a28 28 0 0 1-2.275 0c.376.492.758.948 1.137 1.363q.571-.623 1.138-1.364m5.04-7.894c2.665.764 4.406 2.034 4.406 3.567s-1.74 2.803-4.405 3.567c.67 2.69.44 4.832-.887 5.598c-1.327.767-3.297-.105-5.292-2.031c-1.994 1.925-3.964 2.798-5.291 2.031s-1.557-2.908-.887-5.598C3.157 14.803 1.417 13.533 1.417 12s1.74-2.803 4.405-3.567c-.67-2.69-.44-4.832.887-5.599c1.327-.766 3.297.106 5.291 2.032c1.995-1.926 3.965-2.798 5.292-2.032c1.327.767 1.557 2.909.887 5.599m-.973-.248c.57-2.26.45-3.986-.413-4.485c-.863-.498-2.418.262-4.09 1.885a22 22 0 0 1 1.746 2.175c.978.09 1.904.234 2.757.425m-10.41 7.63c-.569 2.26-.45 3.986.414 4.484c.863.498 2.418-.261 4.09-1.884a22 22 0 0 1-1.746-2.176a22 22 0 0 1-2.757-.425m4.068-8.142a28 28 0 0 1 2.275 0A21 21 0 0 0 12 6.31q-.57.625-1.137 1.364m-1.31.087a22 22 0 0 1 1.746-2.175C9.627 3.962 8.072 3.202 7.21 3.7c-.863.499-.983 2.226-.413 4.485c.853-.19 1.779-.334 2.757-.425m4.34 7.52A25.4 25.4 0 0 0 15.788 12a25.4 25.4 0 0 0-1.893-3.28a25.4 25.4 0 0 0-3.787 0A25.4 25.4 0 0 0 8.213 12a25.4 25.4 0 0 0 1.894 3.28a25.4 25.4 0 0 0 3.787 0m1.285-.132q.924-.12 1.75-.303a21 21 0 0 0-.612-1.667a28 28 0 0 1-1.137 1.97M8.823 8.851q-.924.121-1.75.304q.255.806.613 1.667a28 28 0 0 1 1.137-1.97m-1.75 5.994q.826.182 1.75.303a28 28 0 0 1-1.137-1.97a21 21 0 0 0-.613 1.667m-.978-.245c.262-.834.6-1.708 1.01-2.6a22 22 0 0 1-1.01-2.6c-2.241.636-3.677 1.604-3.677 2.6s1.436 1.963 3.677 2.6M16.93 9.155q-.827-.183-1.75-.304a28 28 0 0 1 1.137 1.97q.357-.86.613-1.666m.977.245c-.26.834-.6 1.708-1.01 2.6c.41.892.75 1.766 1.01 2.6c2.242-.637 3.678-1.604 3.678-2.6s-1.436-1.963-3.678-2.6M12 13.879a1.88 1.88 0 1 1 0-3.758a1.88 1.88 0 0 1 0 3.758"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="#68A063"><path d="M63.999 0a5.6 5.6 0 0 0-2.789.744L11.445 29.646L28.852 61.58L64.592.053A8 8 0 0 0 64.003 0Zm2.316.605v.002l35.194 60.577l16.545-30.449a5.5 5.5 0 0 0-1.028-.817L91.38 15.024L66.7.754h-.007c-.12-.061-.252-.099-.378-.15Zm-1.024.248L29.417 62.616l35.579 65.278c.1-.02.198-.023.297-.05l35.653-65.624ZM10.586 30.176c-1.502 1.031-2.35 2.752-2.35 4.595v58.478c0 .93.254 1.838.684 2.645l19.34-33.293Zm108.161 1.4l-16.643 30.629l17.66 30.398V34.77c0-1.15-.382-2.265-1.017-3.195zm-17.204 31.667l-34.808 64.062l.055-.028l50.243-29.183l.004-.002c1.402-.793 2.3-2.155 2.604-3.693zm-72.718.394L9.545 96.832c.406.5.885.936 1.43 1.266l.001.004l49.702 28.866l.53.305l.006.002h.002c.257.151.528.266.798.372q.216.082.433.146c.125.037.251.062.376.089q.362.077.727.108c.118.01.237.01.355.01z"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="#4a4a4c"><path fill-rule="evenodd" d="M63.11 16c-27.02 0-48.887 21.867-48.887 48.89c0 27.02 21.866 48.887 48.886 48.887c27.023 0 48.891-21.866 48.891-48.886C112 37.868 90.131 16 63.11 16zM46.222 42.133c2.843 0 5.511.355 7.644 1.246c2.313.887 4.446 2.133 6.578 3.91l-4.98 6.754c-1.422-1.066-2.844-1.777-4.086-2.309c-1.246-.535-2.844-.71-4.27-.71c-6.043 0-9.066 4.62-9.066 14.042c0 4.801.71 8.18 2.312 10.133c1.602 2.133 3.735 3.024 6.754 3.024c1.426 0 2.848-.18 4.09-.711c1.246-.535 2.668-1.246 4.446-2.313l4.976 7.114c-4.086 3.373-8.71 4.976-14.043 4.976c-4.266 0-7.824-.89-11.023-2.668c-3.02-1.777-5.512-4.441-7.11-7.82c-1.6-3.38-2.488-7.29-2.488-11.91c0-4.446.887-8.536 2.488-11.914c1.598-3.555 4.09-6.223 7.11-8.176c3.023-1.602 6.578-2.668 10.668-2.668zm14.933 1.601h12.266l8.535 35.375l9.066-35.375h11.91L89.067 86.398C87.29 91.91 84.621 96 80.891 99.023c-3.735 3.02-8.711 4.622-14.934 5.157L64.711 96c4.09-.535 7.11-1.422 9.066-2.844c.711-.535 2.133-2.133 2.133-2.133L61.156 43.734z"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" fill="#181717" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></div>
-                        <div class="tech-icon text-center"><svg class="h-12 w-12 mx-auto text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M.946 0L2.23 14.4L7.992 16l5.777-1.602L15.055 0zM12.26 4.71H5.502l.161 1.809H12.1l-.485 5.422l-3.623 1.004l-3.618-1.004l-.247-2.774H5.9l.126 1.41l1.967.53l.004-.001l1.968-.531l.204-2.29H4.048l-.476-5.341h8.847l-.158 1.766z"></path></svg></div>
-                        <div class="tech-icon text-center"><svg class="h-12 w-12 mx-auto text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="m64 32l35 403.22L255.77 480L413 435.15L448 32Zm290.68 334.9L256.07 395l-98.46-28.24l-6.75-77.76h48.26l3.43 39.56l53.59 15.16l.13.28l53.47-14.85l5.64-64.15H203l-4-50h120.65l4.35-51H140l-4-49h240.58Z"></path></svg></svg></div>
-                        <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12.001 4.8q-4.8 0-6 4.8q1.8-2.4 4.2-1.8c.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12q4.8 0 6-4.8q-1.8 2.4-4.2 1.8c-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8m-6 7.2q-4.8 0-6 4.8q1.8-2.4 4.2-1.8c.913.228 1.565.89 2.288 1.624c1.177 1.194 2.538 2.576 5.512 2.576q4.8 0 6-4.8q-1.8 2.4-4.2 1.8c-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12"></path></svg></div>
+                    <div class="md:hidden">
+                        <div id="mobile-slider" class="flex slider space-x-10">
+                            <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#323330" rx="85.33"/><path fill="#F0DB4F" d="M32 32v448h448V32Zm240 348c0 43.61-25.76 64.87-63.05 64.87c-33.68 0-53.23-17.44-63.15-38.49l34.28-20.75c6.61 11.73 11.63 21.65 26.06 21.65c12 0 21.86-5.41 21.86-26.46V240h44Zm99.35 63.87c-39.09 0-64.35-17.64-76.68-42L329 382c9 14.74 20.75 24.56 41.5 24.56c17.44 0 27.57-7.72 27.57-19.75c0-14.43-10.43-19.54-29.68-28l-10.52-4.52c-30.38-12.92-50.52-29.16-50.52-63.45c0-31.57 24.05-54.63 61.64-54.63c26.77 0 46 8.32 59.85 32.68L396 290c-7.22-12.93-15-18-27.06-18c-12.33 0-20.15 7.82-20.15 18c0 12.63 7.82 17.74 25.86 25.56l10.52 4.51c35.79 15.34 55.94 31 55.94 66.16c.01 37.9-29.76 57.64-69.76 57.64"></path></svg></div>
+                            <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#61DAFB"><path d="M14.448 16.24a22 22 0 0 1-1.747 2.175c1.673 1.623 3.228 2.383 4.091 1.884c.863-.498.982-2.225.413-4.484c-.853.19-1.779.334-2.757.424m-1.31.087a28 28 0 0 1-2.275 0c.376.492.758.948 1.137 1.363q.571-.623 1.138-1.364m5.04-7.894c2.665.764 4.406 2.034 4.406 3.567s-1.74 2.803-4.405 3.567c.67 2.69.44 4.832-.887 5.598c-1.327.767-3.297-.105-5.292-2.031c-1.994 1.925-3.964 2.798-5.291 2.031s-1.557-2.908-.887-5.598C3.157 14.803 1.417 13.533 1.417 12s1.74-2.803 4.405-3.567c-.67-2.69-.44-4.832.887-5.599c1.327-.766 3.297.106 5.291 2.032c1.995-1.926 3.965-2.798 5.292-2.032c1.327.767 1.557 2.909.887 5.599m-.973-.248c.57-2.26.45-3.986-.413-4.485c-.863-.498-2.418.262-4.09 1.885a22 22 0 0 1 1.746 2.175c.978.09 1.904.234 2.757.425m-10.41 7.63c-.569 2.26-.45 3.986.414 4.484c.863.498 2.418-.261 4.09-1.884a22 22 0 0 1-1.746-2.176a22 22 0 0 1-2.757-.425m4.068-8.142a28 28 0 0 1 2.275 0A21 21 0 0 0 12 6.31q-.57.625-1.137 1.364m-1.31.087a22 22 0 0 1 1.746-2.175C9.627 3.962 8.072 3.202 7.21 3.7c-.863.499-.983 2.226-.413 4.485c.853-.19 1.779-.334 2.757-.425m4.34 7.52A25.4 25.4 0 0 0 15.788 12a25.4 25.4 0 0 0-1.893-3.28a25.4 25.4 0 0 0-3.787 0A25.4 25.4 0 0 0 8.213 12a25.4 25.4 0 0 0 1.894 3.28a25.4 25.4 0 0 0 3.787 0m1.285-.132q.924-.12 1.75-.303a21 21 0 0 0-.612-1.667a28 28 0 0 1-1.137 1.97M8.823 8.851q-.924.121-1.75.304q.255.806.613 1.667a28 28 0 0 1 1.137-1.97m-1.75 5.994q.826.182 1.75.303a28 28 0 0 1-1.137-1.97a21 21 0 0 0-.613 1.667m-.978-.245c.262-.834.6-1.708 1.01-2.6a22 22 0 0 1-1.01-2.6c-2.241.636-3.677 1.604-3.677 2.6s1.436 1.963 3.677 2.6M16.93 9.155q-.827-.183-1.75-.304a28 28 0 0 1 1.137 1.97q.357-.86.613-1.666m.977.245c-.26.834-.6 1.708-1.01 2.6c.41.892.75 1.766 1.01 2.6c2.242-.637 3.678-1.604 3.678-2.6s-1.436-1.963-3.678-2.6M12 13.879a1.88 1.88 0 1 1 0-3.758a1.88 1.88 0 0 1 0 3.758"></path></svg></div>
+                            <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="#68A063"><path d="M63.999 0a5.6 5.6 0 0 0-2.789.744L11.445 29.646L28.852 61.58L64.592.053A8 8 0 0 0 64.003 0Zm2.316.605v.002l35.194 60.577l16.545-30.449a5.5 5.5 0 0 0-1.028-.817L91.38 15.024L66.7.754h-.007c-.12-.061-.252-.099-.378-.15Zm-1.024.248L29.417 62.616l35.579 65.278c.1-.02.198-.023.297-.05l35.653-65.624ZM10.586 30.176c-1.502 1.031-2.35 2.752-2.35 4.595v58.478c0 .93.254 1.838.684 2.645l19.34-33.293Zm108.161 1.4l-16.643 30.629l17.66 30.398V34.77c0-1.15-.382-2.265-1.017-3.195zm-17.204 31.667l-34.808 64.062l.055-.028l50.243-29.183l.004-.002c1.402-.793 2.3-2.155 2.604-3.693zm-72.718.394L9.545 96.832c.406.5.885.936 1.43 1.266l.001.004l49.702 28.866l.53.305l.006.002h.002c.257.151.528.266.798.372q.216.082.433.146c.125.037.251.062.376.089q.362.077.727.108c.118.01.237.01.355.01z"></path></svg></div>
+                            <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="#4a4a4c"><path fill-rule="evenodd" d="M63.11 16c-27.02 0-48.887 21.867-48.887 48.89c0 27.02 21.866 48.887 48.886 48.887c27.023 0 48.891-21.866 48.891-48.886C112 37.868 90.131 16 63.11 16zM46.222 42.133c2.843 0 5.511.355 7.644 1.246c2.313.887 4.446 2.133 6.578 3.91l-4.98 6.754c-1.422-1.066-2.844-1.777-4.086-2.309c-1.246-.535-2.844-.71-4.27-.71c-6.043 0-9.066 4.62-9.066 14.042c0 4.801.71 8.18 2.312 10.133c1.602 2.133 3.735 3.024 6.754 3.024c1.426 0 2.848-.18 4.09-.711c1.246-.535 2.668-1.246 4.446-2.313l4.976 7.114c-4.086 3.373-8.71 4.976-14.043 4.976c-4.266 0-7.824-.89-11.023-2.668c-3.02-1.777-5.512-4.441-7.11-7.82c-1.6-3.38-2.488-7.29-2.488-11.91c0-4.446.887-8.536 2.488-11.914c1.598-3.555 4.09-6.223 7.11-8.176c3.023-1.602 6.578-2.668 10.668-2.668zm14.933 1.601h12.266l8.535 35.375l9.066-35.375h11.91L89.067 86.398C87.29 91.91 84.621 96 80.891 99.023c-3.735 3.02-8.711 4.622-14.934 5.157L64.711 96c4.09-.535 7.11-1.422 9.066-2.844c.711-.535 2.133-2.133 2.133-2.133L61.156 43.734z"></path></svg></div>
+                            <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" fill="#181717" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></div>
+                            <div class="tech-icon text-center"><svg class="h-12 w-12 mx-auto text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M.946 0L2.23 14.4L7.992 16l5.777-1.602L15.055 0zM12.26 4.71H5.502l.161 1.809H12.1l-.485 5.422l-3.623 1.004l-3.618-1.004l-.247-2.774H5.9l.126 1.41l1.967.53l.004-.001l1.968-.531l.204-2.29H4.048l-.476-5.341h8.847l-.158 1.766z"></path></svg></div>
+                            <div class="tech-icon text-center"><svg class="h-12 w-12 mx-auto text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="m64 32l35 403.22L255.77 480L413 435.15L448 32Zm290.68 334.9L256.07 395l-98.46-28.24l-6.75-77.76h48.26l3.43 39.56l53.59 15.16l.13.28l53.47-14.85l5.64-64.15H203l-4-50h120.65l4.35-51H140l-4-49h240.58Z"></path></svg></svg></div>
+                            <div class="tech-icon text-center"><svg class="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12.001 4.8q-4.8 0-6 4.8q1.8-2.4 4.2-1.8c.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12q4.8 0 6-4.8q-1.8 2.4-4.2 1.8c-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8m-6 7.2q-4.8 0-6 4.8q1.8-2.4 4.2-1.8c.913.228 1.565.89 2.288 1.624c1.177 1.194 2.538 2.576 5.512 2.576q4.8 0 6-4.8q-1.8 2.4-4.2 1.8c-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12"></path></svg></div>
                         </div>
                     </div>
                     <div class="hidden md:flex flex-wrap justify-center items-center gap-x-10 gap-y-8">
@@ -344,7 +335,7 @@
 
     <div id="letter-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
-            <button id="close-letter-btn" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800">
+            <button id="close-letter-btn" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800" aria-label="Fechar modal">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </button>
             <h2 class="text-2xl font-bold text-slate-800 mb-4" data-key="letter_title">Carta de Apresentação</h2>
@@ -356,7 +347,7 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getFirestore, doc, getDoc, setDoc, increment, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import { getFirestore, doc, getDoc, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
         const firebaseConfig = {
@@ -368,43 +359,57 @@
             appId: "1:763519148648:web:f3fa8c4a14ff530bb951dd"
         };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
+        const TECH_EXPERIENCE_DATA = {
+            pt: [
+                { role: 'Desenvolvedor Front-end', company: 'MM Tecnologia', period: 'Março 2024 – Presente', details: ['Desenvolvimento e manutenção de interfaces de usuário com React e Tailwind CSS.', 'Implementação de componentes reutilizáveis e otimização de performance.', 'Consumo de APIs RESTful para integração com serviços de back-end.'] },
+                { role: 'Quality Assurance / Frontend Developer', company: 'Joyjet Digital Marketing and Tech Agency', period: 'Junho 2021 – Maio 2024', details: ['Atuação no controle de qualidade de sistemas e desenvolvimento frontend.'] },
+                { role: 'Estagiário de programação', company: 'C2A Tecnologia', period: 'Maio 2021 – Junho 2022', details: ['Atuação não remunerada com foco no aprendizado de Javascript, css e html.'] }
+            ],
+            en: [
+                { role: 'Frontend Developer', company: 'MM Tecnologia', period: 'March 2024 – Present', details: ['Development and maintenance of user interfaces with React and Tailwind CSS.', 'Implementation of reusable components and performance optimization.', 'Consumption of RESTful APIs for backend integration.'] },
+                { role: 'Quality Assurance / Frontend Developer', company: 'Joyjet Digital Marketing and Tech Agency', period: 'June 2021 – May 2024', details: ['Worked in system quality control and frontend development.'] },
+                { role: 'Programming Intern', company: 'C2A Tecnologia', period: 'May 2021 – June 2022', details: ['Unpaid internship focused on learning Javascript, CSS, and HTML.'] }
+            ]
+        };
 
-        async function updateVisitorCount() {
-            const visitorCountElement = document.getElementById('visitor-count');
-            try {
-                await signInAnonymously(auth);
-                const counterRef = doc(db, "visitors", "counter");
-                
-                if (!sessionStorage.getItem('visitorCounted')) {
-                    await runTransaction(db, async (transaction) => {
-                        const counterDoc = await transaction.get(counterRef);
-                        if (!counterDoc.exists()) {
-                            transaction.set(counterRef, { count: 1 });
-                        } else {
-                            const newCount = (counterDoc.data().count || 0) + 1;
-                            transaction.update(counterRef, { count: newCount });
-                        }
-                    });
-                    sessionStorage.setItem('visitorCounted', 'true');
-                }
+        const COMMERCIAL_EXPERIENCE_DATA = {
+            pt: [
+                { role: 'Venda de Peças e Atendimento ao Cliente', company: 'Silcar', period: 'Março 2018 – Março 2021', details: [] },
+                { role: 'Supervisor', company: 'Flank Steak Burguer', period: 'Junho 2017 – Dezembro 2017', details: ['Responsável pela supervisão de delivery, logística, caixa, estoque e compras.'] },
+                { role: 'Consultor de Peças', company: 'Newsedan - Mercedes Bens', period: 'Agosto 2015 – Março 2017', details: ['Atuação como consultor de peças, estoquista e comprador.'] },
+                { role: 'Consultor Técnico / Chefe de Oficina', company: 'Champion Volvo', period: 'Setembro 2012 – Maio 2015', details: ['Responsável pela consultoria técnica, gestão de estoque, chefia de oficina, compras e garantia.'] },
+                { role: 'Consultor Técnico', company: 'Brava Motos', period: 'Maio 2011 – Maio 2012', details: ['Atuação como consultor técnico e estoquista.'] },
+                { role: 'Distribuidor / Relacionamento com Cliente', company: 'Limpáx', period: 'Julho 2010 – Abril 2011 e Março 2009 – Outubro 2009', details: ['Distribuição de produtos, contato com clientes e controle de contas.'] },
+                { role: 'Técnico de Manutenção', company: 'Fort Segurança', period: 'Março 2010 – Maio 2010', details: ['Montagem, manutenção e monitoramento de computadores.'] },
+                { role: 'Administrador de Rede / Manutenção', company: 'Center Line', period: 'Dezembro 2009 – Fevereiro 2010', details: ['Manutenção de computadores e administração da rede.'] },
+                { role: 'Operador de Telemarketing / Controle de Qualidade', company: 'Contax', period: 'Janeiro 2008 – Janeiro 2009', details: ['Atuação como operador de telemarketing, agente de retenção e no controle de qualidade.'] }
+            ],
+            en: [
+                { role: 'Parts Sales and Customer Service', company: 'Silcar', period: 'March 2018 – March 2019', details: [] },
+                { role: 'Supervisor', company: 'Flank Steak Burguer', period: 'June 2017 – December 2017', details: ['Responsible for supervising delivery, logistics, cashier, inventory, and purchasing.'] },
+                { role: 'Parts Consultant', company: 'Newsedan - Mercedes Bens', period: 'August 2015 – March 2017', details: ['Worked as a parts consultant, stockist, and buyer.'] },
+                { role: 'Technical Consultant / Workshop Manager', company: 'Champion Volvo', period: 'September 2012 – May 2015', details: ['Responsible for technical consulting, inventory management, workshop supervision, purchasing, and warranty claims.'] },
+                { role: 'Technical Consultant', company: 'Brava Motos', period: 'May 2011 – May 2012', details: ['Worked as a technical consultant and stockist.'] },
+                { role: 'Distributor / Customer Relations', company: 'Limpáx', period: 'July 2010 – April 2011 & March 2009 – October 2009', details: ['Product distribution, customer contact, and account management.'] },
+                { role: 'Maintenance Technician', company: 'Fort Segurança', period: 'March 2010 – May 2010', details: ['Assembly, maintenance, and monitoring of computers.'] },
+                { role: 'Network Administrator / Maintenance', company: 'Center Line', period: 'December 2009 – February 2010', details: ['Computer maintenance and network administration.'] },
+                { role: 'Telemarketing Operator / Quality Control', company: 'Contax', period: 'January 2008 – Janeiro 2009', details: ['Worked as a telemarketing operator, retention agent, and in quality control.'] }
+            ]
+        };
 
-                const finalSnap = await getDoc(counterRef);
-                if (finalSnap.exists() && finalSnap.data().count !== undefined) {
-                    visitorCountElement.textContent = finalSnap.data().count;
-                } else {
-                    visitorCountElement.textContent = '0'; 
-                }
-            } catch (error) {
-                console.error("Error updating visitor count:", error);
-                if (visitorCountElement) {
-                    visitorCountElement.textContent = 'N/A';
-                }
-            }
-        }
-        
+        const DEV_COURSES_DATA = {
+            pt: [
+                '<strong>Geração Tech 2.0 (IEL & Gov. do Ceará, 2025):</strong> Formação Full-Stack (200h). <strong class="text-amber-500">Classificado entre os 50 melhores.</strong> Tecnologias: React, Node.js, SQL, Cypress, Git/GitHub e Cloud.',
+                '<strong>Udemy (Jonas Schmedtmann):</strong> Advanced JavaScript, Advanced CSS and Sass.',
+                '<strong>Origamid:</strong> React, UI Design, JavaScript ES6, CSS Grid Layout, CSS Flexbox, HTML e CSS.'
+            ],
+            en: [
+                '<strong>Geração Tech 2.0 (IEL & Ceará State Gov., 2025):</strong> Full-Stack Training (200h). <strong class="text-amber-500">Ranked among the top 50.</strong> Technologies: React, Node.js, SQL, Cypress, Git/GitHub, and Cloud.',
+                '<strong>Udemy (Jonas Schmedtmann):</strong> Advanced JavaScript, Advanced CSS and Sass.',
+                '<strong>Origamid:</strong> React, UI Design, JavaScript ES6, CSS Grid Layout, CSS Flexbox, HTML e CSS.'
+            ]
+        };
+
         const i18n = {
             pt: {
                 title: "Currículo Interativo | Francisco Nilton Freire Filho",
@@ -433,11 +438,6 @@
                 education_title: "Formação e Cursos",
                 education_intro: "Aqui você encontra meu histórico educacional, desde cursos técnicos fundamentais até as especializações mais recentes em desenvolvimento web e design. A formação está organizada em duas categorias para facilitar a visualização do meu compromisso com o aprendizado contínuo e a adaptação às novas tecnologias.",
                 dev_courses_title: "Desenvolvimento e Design (2021 - 2025)",
-                dev_courses_list: [
-                    '<strong>Geração Tech 2.0 (IEL & Gov. do Ceará, 2025):</strong> Formação Full-Stack (200h). <strong class="text-amber-500">Classificado entre os 50 melhores.</strong> Tecnologias: React, Node.js, SQL, Cypress, Git/GitHub e Cloud.',
-                    '<strong>Udemy (Jonas Schmedtmann):</strong> Advanced JavaScript, Advanced CSS and Sass.',
-                    '<strong>Origamid:</strong> React, UI Design, JavaScript ES6, CSS Grid Layout, CSS Flexbox, HTML e CSS.'
-                ],
                 tech_courses_title: "Cursos Técnicos (2004 - 2005)",
                 languages_title: "Idiomas",
                 english_language_name: "Inglês",
@@ -446,22 +446,6 @@
                 contact_intro: "Gostou do que viu? Ficarei feliz em conectar e discutir como minhas habilidades e experiência podem agregar valor à sua equipe ou projeto. Utilize um dos canais abaixo para entrar em contato.",
                 letter_title: "Carta de Apresentação",
                 letter_body: "<p>Prezado(a) Gerente de Contratação,</p><p>Escrevo com grande entusiasmo para expressar meu interesse na posição de Desenvolvedor em sua empresa. Com uma carreira consolidada de mais de uma década em consultoria técnica e atendimento ao cliente, realizei uma transição de carreira planejada e dedicada para a área de desenvolvimento de software, uma paixão que cultivo há muitos anos.</p><p>Minha trajetória profissional me proporcionou uma perspectiva única que acredito ser um grande diferencial. Atuando diretamente com clientes, aprendi a ouvir, diagnosticar problemas e traduzir necessidades complexas em soluções práticas — habilidades que hoje aplico diretamente na criação de interfaces de usuário intuitivas e eficientes. Minha experiência em Quality Assurance, utilizando ferramentas como Cypress, solidificou meu compromisso com a entrega de produtos robustos e de alta qualidade.</p><p>Para complementar essa vivência, investi pesadamente em minha formação técnica. Através de cursos intensivos como o Geração Tech 2.0, no qual obtive classificação entre os 50 melhores, e especializações em plataformas como Udemy e Origamid, adquiri proficiência em tecnologias essenciais do ecossistema JavaScript, incluindo React, Node.js, HTML5, CSS3 e Tailwind CSS. Além disso, mantenho-me atualizado com as tendências do setor, aprofundando meus estudos em Inteligência Artificial para otimizar fluxos de trabalho de desenvolvimento.</p><p>Busco uma oportunidade onde eu possa combinar minha sólida base de experiência profissional com minhas habilidades técnicas em desenvolvimento para criar soluções que não apenas funcionem bem, mas que também ofereçam uma experiência de usuário excepcional. Tenho a convicção de que minha capacidade de comunicação, resolução de problemas e foco em resultados me permitirão contribuir significativamente para o sucesso de sua equipe.</p><p>Agradeço a sua atenção e tempo. Coloco-me à inteira disposição para uma conversa.</p><p>Atenciosamente,<br>Francisco Nilton Freire Filho</p>",
-                tech_experience: [
-                    { role: 'Desenvolvedor Front-end', company: 'MM Tecnologia', period: 'Março 2024 – Presente', details: ['Desenvolvimento e manutenção de interfaces de usuário com React e Tailwind CSS.', 'Implementação de componentes reutilizáveis e otimização de performance.', 'Consumo de APIs RESTful para integração com serviços de back-end.'] },
-                    { role: 'Quality Assurance / Frontend Developer', company: 'Joyjet Digital Marketing and Tech Agency', period: 'Junho 2021 – Maio 2024', details: ['Atuação no controle de qualidade de sistemas e desenvolvimento frontend.'] },
-                    { role: 'Estagiário de programação', company: 'C2A Tecnologia', period: 'Maio 2021 – Junho 2022', details: ['Atuação não remunerada com foco no aprendizado de Javascript, css e html.'] }
-                ],
-                commercial_experience: [
-                    { role: 'Venda de Peças e Atendimento ao Cliente', company: 'Silcar', period: 'Março 2018 – Março 2021', details: [] },
-                    { role: 'Supervisor', company: 'Flank Steak Burguer', period: 'Junho 2017 – Dezembro 2017', details: ['Responsável pela supervisão de delivery, logística, caixa, estoque e compras.'] },
-                    { role: 'Consultor de Peças', company: 'Newsedan - Mercedes Bens', period: 'Agosto 2015 – Março 2017', details: ['Atuação como consultor de peças, estoquista e comprador.'] },
-                    { role: 'Consultor Técnico / Chefe de Oficina', company: 'Champion Volvo', period: 'Setembro 2012 – Maio 2015', details: ['Responsável pela consultoria técnica, gestão de estoque, chefia de oficina, compras e garantia.'] },
-                    { role: 'Consultor Técnico', company: 'Brava Motos', period: 'Maio 2011 – Maio 2012', details: ['Atuação como consultor técnico e estoquista.'] },
-                    { role: 'Distribuidor / Relacionamento com Cliente', company: 'Limpáx', period: 'Julho 2010 – Abril 2011 e Março 2009 – Outubro 2009', details: ['Distribuição de produtos, contato com clientes e controle de contas.'] },
-                    { role: 'Técnico de Manutenção', company: 'Fort Segurança', period: 'Março 2010 – Maio 2010', details: ['Montagem, manutenção e monitoramento de computadores.'] },
-                    { role: 'Administrador de Rede / Manutenção', company: 'Center Line', period: 'Dezembro 2009 – Fevereiro 2010', details: ['Manutenção de computadores e administração da rede.'] },
-                    { role: 'Operador de Telemarketing / Controle de Qualidade', company: 'Contax', period: 'Janeiro 2008 – Janeiro 2009', details: ['Atuação como operador de telemarketing, agente de retenção e no controle de qualidade.'] }
-                ],
                 chart_labels: ['Frontend', 'Técnicas', 'Gestão & Vendas', 'Ferramentas'],
                 chart_tooltip_skills: {
                     'Frontend': 'HTML, CSS, JS, React',
@@ -503,11 +487,6 @@
                 education_title: "Education & Courses",
                 education_intro: "Here you will find my educational background, from fundamental technical courses to the most recent specializations in web development and design. The training is organized into two categories to facilitate the visualization of my commitment to continuous learning and adaptation to new technologies.",
                 dev_courses_title: "Development & Design (2021 - 2025)",
-                dev_courses_list: [
-                    '<strong>Geração Tech 2.0 (IEL & Ceará State Gov., 2025):</strong> Full-Stack Training (200h). <strong class="text-amber-500">Ranked among the top 50.</strong> Technologies: React, Node.js, SQL, Cypress, Git/GitHub, and Cloud.',
-                    '<strong>Udemy (Jonas Schmedtmann):</strong> Advanced JavaScript, Advanced CSS and Sass.',
-                    '<strong>Origamid:</strong> React, UI Design, JavaScript ES6, CSS Grid Layout, CSS Flexbox, HTML e CSS.'
-                ],
                 tech_courses_title: "Technical Courses (2004 - 2005)",
                 languages_title: "Languages",
                 english_language_name: "English",
@@ -516,22 +495,6 @@
                 contact_intro: "Liked what you saw? I would be happy to connect and discuss how my skills and experience can add value to your team or project. Use one of the channels below to get in touch.",
                 letter_title: "Cover Letter",
                 letter_body: "<p>Dear Hiring Manager,</p><p>I am writing with great enthusiasm to express my interest in the Developer position at your company. With a consolidated career of over a decade in technical consulting and customer service, I have made a planned and dedicated career transition to software development, a passion I have cultivated for many years.</p><p>My professional journey has given me a unique perspective that I believe is a significant differentiator. Working directly with clients, I learned to listen, diagnose problems, and translate complex needs into practical solutions—skills that I now apply directly to creating intuitive and efficient user interfaces. My experience in Quality Assurance, using tools like Cypress, has solidified my commitment to delivering robust, high-quality products.</p><p>To complement this experience, I have invested heavily in my technical training. Through intensive courses like Geração Tech 2.0, where I ranked among the top 50 participants, and specializations on platforms like Udemy and Origamid, I have gained proficiency in essential technologies of the JavaScript ecosystem, including React, Node.js, HTML5, CSS3, and Tailwind CSS. Furthermore, I stay current with industry trends by deepening my studies in Artificial Intelligence to optimize development workflows.</p><p>I am seeking an opportunity where I can combine my solid professional experience with my technical skills in development to create solutions that not only work well but also offer an exceptional user experience. I am confident that my communication, problem-solving, and results-oriented focus will allow me to contribute significantly to your team's success.</p><p>Thank you for your time and consideration. I am available for a conversation at your convenience.</p><p>Sincerely,<br>Francisco Nilton Freire Filho</p>",
-                tech_experience: [
-                    { role: 'Frontend Developer', company: 'MM Tecnologia', period: 'March 2024 – Present', details: ['Development and maintenance of user interfaces with React and Tailwind CSS.', 'Implementation of reusable components and performance optimization.', 'Consumption of RESTful APIs for backend integration.'] },
-                    { role: 'Quality Assurance / Frontend Developer', company: 'Joyjet Digital Marketing and Tech Agency', period: 'June 2021 – May 2024', details: ['Worked in system quality control and frontend development.'] },
-                    { role: 'Programming Intern', company: 'C2A Tecnologia', period: 'May 2021 – June 2022', details: ['Unpaid internship focused on learning Javascript, CSS, and HTML.'] }
-                ],
-                commercial_experience: [
-                    { role: 'Parts Sales and Customer Service', company: 'Silcar', period: 'March 2018 – March 2019', details: [] },
-                    { role: 'Supervisor', company: 'Flank Steak Burguer', period: 'June 2017 – December 2017', details: ['Responsible for supervising delivery, logistics, cashier, inventory, and purchasing.'] },
-                    { role: 'Parts Consultant', company: 'Newsedan - Mercedes Bens', period: 'August 2015 – March 2017', details: ['Worked as a parts consultant, stockist, and buyer.'] },
-                    { role: 'Technical Consultant / Workshop Manager', company: 'Champion Volvo', period: 'September 2012 – May 2015', details: ['Responsible for technical consulting, inventory management, workshop supervision, purchasing, and warranty claims.'] },
-                    { role: 'Technical Consultant', company: 'Brava Motos', period: 'May 2011 – May 2012', details: ['Worked as a technical consultant and stockist.'] },
-                    { role: 'Distributor / Customer Relations', company: 'Limpáx', period: 'July 2010 – April 2011 & March 2009 – October 2009', details: ['Product distribution, customer contact, and account management.'] },
-                    { role: 'Maintenance Technician', company: 'Fort Segurança', period: 'March 2010 – May 2010', details: ['Assembly, maintenance, and monitoring of computers.'] },
-                    { role: 'Network Administrator / Maintenance', company: 'Center Line', period: 'December 2009 – February 2010', details: ['Computer maintenance and network administration.'] },
-                    { role: 'Telemarketing Operator / Quality Control', company: 'Contax', period: 'January 2008 – Janeiro 2009', details: ['Worked as a telemarketing operator, retention agent, and in quality control.'] }
-                ],
                 chart_labels: ['Frontend', 'Technical', 'Management & Sales', 'Tools'],
                 chart_tooltip_skills: {
                     'Frontend': 'HTML, CSS, JS, React',
@@ -549,9 +512,49 @@
         };
 
         let currentChart = null;
+        let currentLang = 'en';
         
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        async function updateVisitorCount() {
+            const visitorCountElement = document.getElementById('visitor-count');
+            try {
+                await signInAnonymously(auth);
+                const counterRef = doc(db, "visitors", "counter");
+                
+                if (!sessionStorage.getItem('visitorCounted')) {
+                    await runTransaction(db, async (transaction) => {
+                        const counterDoc = await transaction.get(counterRef);
+                        if (!counterDoc.exists()) {
+                            transaction.set(counterRef, { count: 1 });
+                        } else {
+                            const newCount = (counterDoc.data().count || 0) + 1;
+                            transaction.update(counterRef, { count: newCount });
+                        }
+                    });
+                    sessionStorage.setItem('visitorCounted', 'true');
+                }
+
+                const finalSnap = await getDoc(counterRef);
+                if (finalSnap.exists() && finalSnap.data().count !== undefined) {
+                    visitorCountElement.textContent = finalSnap.data().count;
+                } else {
+                    visitorCountElement.textContent = '0'; 
+                }
+            } catch (error) {
+                console.error("Error updating visitor count:", error);
+                if (visitorCountElement) {
+                    visitorCountElement.textContent = 'N/A';
+                }
+            }
+        }
+
         function renderContent(lang) {
+            currentLang = lang;
             const content = i18n[lang];
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
             document.title = content.title;
             
             document.querySelectorAll('[data-key]').forEach(elem => {
@@ -561,9 +564,9 @@
                 }
             });
 
-            renderTimeline('tech-experience', content.tech_experience, 'amber');
-            renderTimeline('commercial-experience', content.commercial_experience, 'slate');
-            renderCourses('dev-courses-list', content.dev_courses_list);
+            renderTimeline('tech-experience', TECH_EXPERIENCE_DATA[lang], 'amber');
+            renderTimeline('commercial-experience', COMMERCIAL_EXPERIENCE_DATA[lang], 'slate');
+            renderCourses('dev-courses-list', DEV_COURSES_DATA[lang]);
             renderChart(lang);
             renderPrintVersion(lang);
 
@@ -573,33 +576,29 @@
 
         function renderTimeline(containerId, experienceData, color) {
             const container = document.getElementById(containerId);
-            container.innerHTML = '';
-            experienceData.forEach(job => {
+            container.innerHTML = experienceData.map((job, index) => {
                 const detailsList = job.details.length > 0 ? `<ul class="list-disc pl-5 mt-4 text-slate-600 space-y-1">${job.details.map(d => `<li>${d}</li>`).join('')}</ul>` : '';
-                const itemHTML = `
+                const contentId = `${containerId}-content-${index}`;
+                return `
                     <div class="timeline-item mb-8">
                         <div class="flex items-center">
                             <div class="absolute -left-2.5 w-5 h-5 bg-${color}-500 rounded-full border-4 border-white"></div>
                             <div class="pl-8 w-full">
-                                <div class="cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-xl transition-shadow" onclick="toggleDetails(this)">
+                                <div class="timeline-trigger cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-xl transition-shadow" aria-expanded="false" aria-controls="${contentId}">
                                     <p class="font-bold text-lg text-slate-800">${job.role}</p>
                                     <p class="text-sm text-slate-500">${job.company} | ${job.period}</p>
-                                    <div class="timeline-item-content">${detailsList}</div>
+                                    <div id="${contentId}" class="timeline-item-content">${detailsList}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 `;
-                container.innerHTML += itemHTML;
-            });
+            }).join('');
         }
 
         function renderCourses(containerId, coursesData) {
             const container = document.getElementById(containerId);
-            container.innerHTML = '';
-            coursesData.forEach(course => {
-                container.innerHTML += `<li>${course}</li>`;
-            });
+            container.innerHTML = coursesData.map(course => `<li>${course}</li>`).join('');
         }
 
         function renderChart(lang) {
@@ -652,7 +651,7 @@
             const content = i18n[lang];
             const printContainer = document.getElementById('print-version');
             
-            const experienceHTML = [...content.tech_experience, ...content.commercial_experience].map(job => `
+            const experienceHTML = [...TECH_EXPERIENCE_DATA[lang], ...COMMERCIAL_EXPERIENCE_DATA[lang]].map(job => `
                 <div class="print-job">
                     <h3>${job.role}</h3>
                     <p class="print-job-sub">${job.company} | ${job.period}</p>
@@ -670,7 +669,7 @@
                 </div>
                 
                 <h2>${content.summary_title}</h2>
-                <p>${content.summary_body}</p>
+                <p>${content.summary_body.replace(/<strong class='text-amber-500'>|<\/strong>/g, '')}</p>
 
                 <h2>${content.experience_title}</h2>
                 ${experienceHTML}
@@ -678,7 +677,7 @@
                 <h2>${content.print_education_title}</h2>
                 <div class="print-job">
                     <h3>${content.dev_courses_title}</h3>
-                    <p>Geração Tech 2.0 (IEL & Gov. do Ceará, 2025 - 200h), Udemy (Jonas Schmedtmann), Origamid</p>
+                    <p>${DEV_COURSES_DATA[lang].map(c => c.replace(/<strong.*?>|<\/strong>/g, '')).join(', ')}</p>
                 </div>
                  <div class="print-job">
                     <h3>${content.tech_courses_title}</h3>
@@ -699,72 +698,62 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            const themeToggleLightText = document.getElementById('theme-toggle-light-text');
-            const themeToggleDarkText = document.getElementById('theme-toggle-dark-text');
-            const themeToggleLightTextMobile = document.getElementById('theme-toggle-light-text-mobile');
-            const themeToggleDarkTextMobile = document.getElementById('theme-toggle-dark-text-mobile');
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+            const sidebar = document.getElementById('sidebar');
+            const letterModal = document.getElementById('letter-modal');
+            const mobileSlider = document.getElementById('mobile-slider');
+
+            mobileSlider.innerHTML += mobileSlider.innerHTML;
 
             const applyTheme = (isDark) => {
                 document.documentElement.classList.toggle('dark', isDark);
-                
-                if(themeToggleLightText) themeToggleLightText.classList.toggle('hidden', !isDark); 
-                if(themeToggleDarkText) themeToggleDarkText.classList.toggle('hidden', isDark);   
-
-                if(themeToggleLightTextMobile) themeToggleLightTextMobile.classList.toggle('hidden', !isDark); 
-                if(themeToggleDarkTextMobile) themeToggleDarkTextMobile.classList.toggle('hidden', isDark);   
-
+                document.querySelectorAll('.theme-light-text').forEach(el => el.classList.toggle('hidden', !isDark));
+                document.querySelectorAll('.theme-dark-text').forEach(el => el.classList.toggle('hidden', isDark));
                 localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
             };
 
-            const toggleTheme = () => {
-                const isDarkMode = !document.documentElement.classList.contains('dark');
-                applyTheme(isDarkMode);
+            const toggleTimelineDetail = (trigger) => {
+                const content = document.getElementById(trigger.getAttribute('aria-controls'));
+                const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+                trigger.setAttribute('aria-expanded', !isExpanded);
+                content.classList.toggle('open');
+                content.style.padding = content.classList.contains('open') ? '1rem' : '0';
             };
-
-            if(themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
-            if(themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
-
-            const isInitialDark = localStorage.getItem('color-theme') === 'dark' || 
-                                  (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            applyTheme(isInitialDark);
             
-            updateVisitorCount();
-            renderContent('en');
-
-            document.querySelectorAll('.lang-pt-btn').forEach(btn => {
-                btn.addEventListener('click', () => renderContent('pt'));
-            });
-            document.querySelectorAll('.lang-en-btn').forEach(btn => {
-                btn.addEventListener('click', () => renderContent('en'));
-            });
-
-            document.getElementById('print-btn').addEventListener('click', () => window.print());
-            
-            const letterModal = document.getElementById('letter-modal');
-            document.querySelectorAll('.letter-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
+            document.body.addEventListener('click', (e) => {
+                const target = e.target;
+                const timelineTrigger = target.closest('.timeline-trigger');
+                
+                if (target.closest('[data-lang]')) {
+                    renderContent(target.closest('[data-lang]').dataset.lang);
+                } else if (target.closest('.theme-btn')) {
+                    applyTheme(!document.documentElement.classList.contains('dark'));
+                } else if (target.closest('#menu-btn')) {
+                    sidebar.classList.toggle('open');
+                } else if (target.closest('.letter-btn')) {
                     letterModal.classList.remove('hidden');
                     letterModal.classList.add('flex');
-                });
-            });
-
-            const closeLetterBtn = document.getElementById('close-letter-btn');
-            closeLetterBtn.addEventListener('click', () => {
-                letterModal.classList.add('hidden');
-                letterModal.classList.remove('flex');
-            });
-            
-            letterModal.addEventListener('click', (e) => {
-                if (e.target === letterModal) {
+                } else if (target.closest('#close-letter-btn') || target === letterModal) {
                     letterModal.classList.add('hidden');
                     letterModal.classList.remove('flex');
+                } else if (target.closest('#print-btn')) {
+                    window.print();
+                } else if (timelineTrigger) {
+                    toggleTimelineDetail(timelineTrigger);
+                } else if (sidebar.classList.contains('open') && !sidebar.contains(target)) {
+                    sidebar.classList.remove('open');
                 }
             });
 
+            document.querySelectorAll('#sidebar .nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if(sidebar.classList.contains('open')) {
+                        sidebar.classList.remove('open');
+                    }
+                });
+            });
+
             const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link, header nav a');
+            const navLinks = document.querySelectorAll('.nav-link');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -777,43 +766,17 @@
                         });
                     }
                 });
-            }, {
-                rootMargin: '-50% 0px -50% 0px',
-                threshold: 0.1
-            });
+            }, { rootMargin: '-50% 0px -50% 0px', threshold: 0.1 });
             sections.forEach(section => observer.observe(section));
 
-            const menuBtn = document.getElementById('menu-btn');
-            const sidebar = document.getElementById('sidebar');
-            menuBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                sidebar.classList.toggle('open');
-            });
+            renderContent('en');
 
-            document.querySelectorAll('#sidebar .nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    if(sidebar.classList.contains('open')) {
-                        sidebar.classList.remove('open');
-                    }
-                });
-            });
-
-            document.addEventListener('click', (e) => {
-                if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
-                    sidebar.classList.remove('open');
-                }
-            });
+            const isInitialDark = localStorage.getItem('color-theme') === 'dark' || 
+                                  (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            applyTheme(isInitialDark);
+            
+            updateVisitorCount();
         });
-
-        window.toggleDetails = function(element) {
-            const content = element.querySelector('.timeline-item-content');
-            content.classList.toggle('open');
-            if (content.classList.contains('open')) {
-                content.style.padding = '1rem';
-            } else {
-                content.style.padding = '0';
-            }
-        }
     </script>
 </body>
 </html>
