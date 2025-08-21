@@ -1,137 +1,99 @@
-# **Currículo Interativo \- Francisco Nilton Freire Filho**
+# Currículo Interativo | Interactive Resume
 
-[Read this document in English](https://www.google.com/search?q=%23-interactive-resume---francisco-nilton-freire-filho)
+Este é um currículo web interativo e de página única, projetado para apresentar de forma moderna e dinâmica a trajetória profissional, competências e projetos de Francisco Nilton Freire Filho.
 
-Este é um projeto de currículo interativo de página única, projetado para apresentar de forma dinâmica e moderna as informações profissionais de Francisco Nilton Freire Filho. A página é totalmente responsiva, multilíngue e inclui várias funcionalidades interativas para melhorar a experiência do usuário.
+This is a single-page, interactive web resume designed to present the professional journey, skills, and projects of Francisco Nilton Freire Filho in a modern and dynamic way.
 
-## **🚀 Visão Geral do Projeto**
+## 🧐 Como Foi Feito (How It Was Made)
 
-O objetivo deste projeto é ir além de um currículo tradicional em PDF, oferecendo uma experiência web que não só detalha a jornada profissional, mas também demonstra habilidades práticas de desenvolvimento front-end. Ele foi construído como um arquivo HTML único para simplicidade e portabilidade.
+O projeto foi construído do zero, utilizando tecnologias web modernas para criar uma experiência de usuário rica e fluida, similar a uma Single-Page Application (SPA), mas sem a necessidade de um framework JavaScript complexo.
 
-## **✨ Funcionalidades Principais**
+-   **Estrutura e Conteúdo**: O HTML5 foi usado para estruturar todo o conteúdo de forma semântica. Os dados da carreira, formação e traduções são armazenados em objetos JavaScript, facilitando a manutenção e a atualização.
+-   **Estilo e Design**: O design foi implementado com **Tailwind CSS**, permitindo a criação de uma interface moderna e totalmente responsiva (mobile-first) de forma ágil. Estilos customizados foram adicionados para funcionalidades específicas, como o modo escuro e animações.
+-   **Interatividade**: A interatividade foi desenvolvida com **JavaScript (ES6+)** puro. O código manipula o DOM para funcionalidades como a troca de idiomas, o tema claro/escuro, a expansão da linha do tempo e a exibição de modais, tudo sem recarregar a página.
+-   **Visualização de Dados**: Para exibir as competências de forma visual, foi utilizada a biblioteca **Chart.js**, que gera um gráfico de barras interativo.
+-   **Recursos Externos**: O projeto se conecta ao **Firebase** (Firestore) para implementar um contador de visitantes em tempo real, adicionando um toque dinâmico e demonstrando a integração com serviços de back-end.
 
-* **Design Responsivo:** Totalmente adaptável para visualização em desktops, tablets e dispositivos móveis.  
-* **Modo Claro e Escuro (Dark/Light Mode):** Permite que o usuário alterne entre temas para melhor conforto visual. A preferência do sistema é detectada e aplicada no primeiro acesso.  
-* **Suporte Multilíngue (i18n):** O conteúdo pode ser visualizado em Português (PT) e Inglês (EN), com a troca de idioma ocorrendo instantaneamente.  
-* **Linha do Tempo da Carreira Interativa:** As experiências profissionais são apresentadas em uma linha do tempo onde cada item pode ser expandido para exibir mais detalhes.  
-* **Gráfico de Competências:** Um gráfico de barras gerado com Chart.js que visualiza os níveis de proficiência em diferentes áreas de habilidade.  
-* **Contador de Visitantes:** Utiliza o Firebase (Firestore) para registrar e exibir o número de visitantes únicos da página.  
-* **Versão para Impressão:** Uma folha de estilo otimizada para impressão é aplicada ao acionar a função de imprimir, gerando um currículo limpo e bem formatado.  
-* **Animações e Transições:** Efeitos sutis em CSS são usados para criar uma navegação mais fluida e agradável.
+---
 
-## **🛠️ Tecnologias Utilizadas**
+The project was built from scratch using modern web technologies to create a rich and fluid user experience, similar to a Single-Page Application (SPA), but without the need for a complex JavaScript framework.
 
-O projeto foi construído utilizando tecnologias de front-end modernas, com dependências carregadas via CDN para simplificar a configuração.
+-   **Structure and Content**: HTML5 was used to structure all content semantically. Career data, education, and translations are stored in JavaScript objects, making maintenance and updates easy.
+-   **Style and Design**: The design was implemented with **Tailwind CSS**, allowing for the agile creation of a modern and fully responsive (mobile-first) interface. Custom styles were added for specific features like dark mode and animations.
+-   **Interactivity**: Interactivity was developed with pure **JavaScript (ES6+)**. The code manipulates the DOM for features like language switching, light/dark theme, timeline expansion, and modal displays, all without reloading the page.
+-   **Data Visualization**: To display skills visually, the **Chart.js** library was used to generate an interactive bar chart.
+-   **External Resources**: The project connects to **Firebase** (Firestore) to implement a real-time visitor counter, adding a dynamic touch and demonstrating integration with back-end services.
 
-* **HTML5:** Para a estrutura semântica do conteúdo.  
-* **CSS3:** Para estilizações personalizadas, animações e a folha de estilo de impressão.  
-* **Tailwind CSS:** Um framework CSS utility-first para a construção rápida de interfaces customizadas. É carregado via CDN.  
-* **JavaScript (ES6+):** Responsável por toda a interatividade da página, incluindo:  
-  * Manipulação do DOM.  
-  * Lógica para o modo claro/escuro.  
-  * Funcionalidade de tradução (i18n).  
-  * Interação com a linha do tempo e outros componentes.  
-* **Chart.js:** Uma biblioteca para criar gráficos dinâmicos e visualmente atraentes. Usada na seção de competências.  
-* **Firebase (Firestore):** Utilizado como back-end para a funcionalidade de contador de visitantes. A autenticação é anônima para simplificar o processo.
+## ✨ Funcionalidades Implementadas (Implemented Features)
 
-## **⚙️ Como Rodar o Projeto**
+-   **Tema Claro/Escuro**: Permite ao usuário alternar entre um tema claro e um escuro para melhor conforto visual. A preferência é salva no `localStorage` do navegador.
+-   **Suporte Multilíngue (PT/EN)**: Todo o conteúdo textual pode ser alternado dinamicamente entre Português e Inglês.
+-   **Linha do Tempo Interativa**: A experiência profissional é exibida em uma linha do tempo onde cada item pode ser expandido para revelar mais detalhes.
+-   **Gráfico de Competências**: Um gráfico de barras gerado com Chart.js mostra as habilidades do profissional de forma visual e agrupada por categoria.
+-   **Contador de Visitantes**: Utiliza o Firebase Firestore para exibir o número total de visitantes que acessaram a página.
+-   **Versão para Impressão**: Uma folha de estilo otimizada para impressão (`@media print`) formata o conteúdo em um layout de currículo tradicional, removendo elementos interativos.
+-   **Totalmente Responsivo**: O layout se adapta perfeitamente a qualquer tamanho de tela, de dispositivos móveis a desktops.
 
-Como este projeto é um único arquivo index.html que carrega todas as suas dependências (CSS e JS) de CDNs, não há necessidade de um processo de build ou de um servidor local.
+---
 
-Para executá-lo, basta seguir estes passos:
+-   **Light/Dark Theme**: Allows the user to switch between a light and a dark theme for better visual comfort. The preference is saved in the browser's `localStorage`.
+-   **Multilingual Support (PT/EN)**: All textual content can be dynamically switched between Portuguese and English.
+-   **Interactive Timeline**: Professional experience is displayed in a timeline where each item can be expanded to reveal more details.
+-   **Skills Chart**: A bar chart generated with Chart.js visually displays the professional's skills, grouped by category.
+-   **Visitor Counter**: Uses Firebase Firestore to display the total number of visitors who have accessed the page.
+-   **Print-Friendly Version**: A print-optimized stylesheet (`@media print`) formats the content into a traditional resume layout, removing interactive elements.
+-   **Fully Responsive**: The layout adapts perfectly to any screen size, from mobile devices to desktops.
 
-1. Faça o download do arquivo index.html.  
-2. Abra o arquivo em qualquer navegador de internet moderno (como Google Chrome, Firefox, Safari ou Edge).
+## 🚀 Tecnologias Utilizadas (Technologies Used)
 
-E pronto\! A página será carregada e todas as funcionalidades estarão disponíveis.
+-   **HTML5**: Linguagem de marcação para a estrutura semântica da página.
+-   **CSS3**: Utilizado para estilizações customizadas e para a versão de impressão.
+-   **Tailwind CSS**: Framework CSS utility-first para a criação rápida de interfaces modernas e responsivas.
+-   **JavaScript (ES6+)**: Linguagem de programação que adiciona toda a interatividade e lógica à página.
+-   **Chart.js**: Biblioteca para criar gráficos e visualizações de dados em JavaScript.
+-   **Firebase (Auth & Firestore)**: Plataforma do Google usada para o contador de visitantes em tempo real, com autenticação anônima para segurança.
+-   **Google Fonts**: Para a tipografia (família de fontes 'Inter').
+-   **Git & GitHub**: Para versionamento de código e hospedagem do projeto no GitHub Pages.
 
-## **📂 Estrutura do Arquivo**
+---
 
-Todo o código está contido no arquivo index.html, organizado da seguinte forma:
+-   **HTML5**: Markup language for the semantic structure of the page.
+-   **CSS3**: Used for custom styling and the print version.
+-   **Tailwind CSS**: A utility-first CSS framework for rapidly building modern and responsive interfaces.
+-   **JavaScript (ES6+)**: The programming language that adds all interactivity and logic to the page.
+-   **Chart.js**: A library for creating charts and data visualizations in JavaScript.
+-   **Firebase (Auth & Firestore)**: Google's platform used for the real-time visitor counter, with anonymous authentication for security.
+-   **Google Fonts**: For typography (the 'Inter' font family).
+-   **Git & GitHub**: For code versioning and hosting the project on GitHub Pages.
 
-1. **\<head\>:**  
-   * Meta tags para configuração da página.  
-   * Links para as fontes do Google Fonts.  
-   * Scripts de CDN para Tailwind CSS e Chart.js.  
-   * Tag \<style\> com todo o CSS personalizado, incluindo estilos para o modo escuro e para impressão.  
-2. **\<body\>:**  
-   * Estrutura HTML dividida em seções semânticas (\<header\>, \<aside\>, \<main\>).  
-   * Uso de classes do Tailwind CSS para estilização.  
-   * Atributos data-key para facilitar a internacionalização do conteúdo via JavaScript.  
-3. **\<script type="module"\>:**  
-   * Todo o código JavaScript do projeto está localizado no final do \<body\>.  
-   * Importações do Firebase SDK (módulos App, Firestore, Auth).  
-   * Configuração e inicialização do Firebase.  
-   * Lógica para o contador de visitantes.  
-   * Objeto i18n contendo os textos em português e inglês.  
-   * Funções para renderizar conteúdo dinâmico (linha do tempo, gráfico, traduções).  
-   * Listeners de eventos para os botões de tema, idioma, impressão e outros elementos interativos.
+## ▶️ Como Rodar o Projeto (How to Run the Project)
 
-# **🇺🇸 Interactive Resume \- Francisco Nilton Freire Filho**
+Este projeto é um site estático, mas para que a funcionalidade do Firebase (contador de visitantes) funcione corretamente, ele precisa ser servido por um servidor web, e não aberto diretamente do sistema de arquivos (`file://`).
 
-[Leia este documento em Português](https://www.google.com/search?q=%23-curr%C3%ADculo-interativo---francisco-nilton-freire-filho)
+This project is a static website, but for the Firebase functionality (visitor counter) to work correctly, it needs to be served by a web server, not opened directly from the file system (`file://`).
 
-This is a single-page interactive resume project designed to dynamically and modernly present the professional information of Francisco Nilton Freire Filho. The page is fully responsive, multilingual, and includes various interactive features to enhance the user experience.
+**Opção 1: Acessar a versão online (Online Version)**
 
-## **🚀 Project Overview**
+A maneira mais fácil é acessar a versão já publicada: **[https://devinfreire.github.io/](https://devinfreire.github.io/)**
 
-The goal of this project is to go beyond a traditional PDF resume by offering a web experience that not only details the professional journey but also demonstrates practical front-end development skills. It was built as a single HTML file for simplicity and portability.
+The easiest way is to access the already published version: **[https://devinfreire.github.io/](https://devinfreire.github.io/)**
 
-## **✨ Key Features**
+**Opção 2: Rodar localmente com um servidor (Run Locally with a Server)**
 
-* **Responsive Design:** Fully adaptable for viewing on desktops, tablets, and mobile devices.  
-* **Dark/Light Mode:** Allows the user to switch between themes for better visual comfort. The system preference is detected and applied on the first visit.  
-* **Multilingual Support (i18n):** The content can be viewed in Portuguese (PT) and English (EN), with the language switch occurring instantly.  
-* **Interactive Career Timeline:** Professional experiences are presented in a timeline where each item can be expanded to display more details.  
-* **Skills Chart:** A bar chart generated with Chart.js that visualizes proficiency levels in different skill areas.  
-* **Visitor Counter:** Uses Firebase (Firestore) to record and display the number of unique page visitors.  
-* **Print Version:** A print-optimized stylesheet is applied when triggering the print function, generating a clean and well-formatted resume.  
-* **Animations and Transitions:** Subtle CSS effects are used to create a smoother and more pleasant navigation experience.
-
-## **🛠️ Technologies Used**
-
-The project was built using modern front-end technologies, with dependencies loaded via CDN to simplify setup.
-
-* **HTML5:** For the semantic structure of the content.  
-* **CSS3:** For custom styling, animations, and the print stylesheet.  
-* **Tailwind CSS:** A utility-first CSS framework for rapidly building custom interfaces. It is loaded via CDN.  
-* **JavaScript (ES6+):** Responsible for all page interactivity, including:  
-  * DOM manipulation.  
-  * Logic for dark/light mode.  
-  * Translation functionality (i18n).  
-  * Interaction with the timeline and other components.  
-* **Chart.js:** A library for creating dynamic and visually appealing charts. Used in the skills section.  
-* **Firebase (Firestore):** Used as a back-end for the visitor counter functionality. Authentication is anonymous to simplify the process.
-
-## **⚙️ How to Run the Project**
-
-As this project is a single index.html file that loads all its dependencies (CSS and JS) from CDNs, there is no need for a build process or a local server.
-
-To run it, simply follow these steps:
-
-1. Download the index.html file.  
-2. Open the file in any modern web browser (such as Google Chrome, Firefox, Safari, or Edge).
-
-And that's it\! The page will load, and all features will be available.
-
-## **📂 File Structure**
-
-All the code is contained within the index.html file, organized as follows:
-
-1. **\<head\>:**  
-   * Meta tags for page configuration.  
-   * Links to Google Fonts.  
-   * CDN scripts for Tailwind CSS and Chart.js.  
-   * A \<style\> tag with all custom CSS, including styles for dark mode and printing.  
-2. **\<body\>:**  
-   * HTML structure divided into semantic sections (\<header\>, \<aside\>, \<main\>).  
-   * Use of Tailwind CSS classes for styling.  
-   * data-key attributes to facilitate content internationalization via JavaScript.  
-3. **\<script type="module"\>:**  
-   * All of the project's JavaScript code is located at the end of the \<body\>.  
-   * Imports from the Firebase SDK (App, Firestore, Auth modules).  
-   * Firebase configuration and initialization.  
-   * Logic for the visitor counter.  
-   * An i18n object containing the texts in Portuguese and English.  
-   * Functions to render dynamic content (timeline, chart, translations).  
-   * Event listeners for the theme, language, print buttons, and other interactive elements.
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/DEVinFreire/DEVinFreire.github.io.git
+    ```
+2.  **Navegue até o diretório:**
+    ```bash
+    cd DEVinFreire.github.io
+    ```
+3.  **Inicie um servidor local.** Se você tiver o Node.js instalado, pode usar o `npx`:
+    ```bash
+    npx serve
+    ```
+    Ou, se tiver Python 3 instalado:
+    ```bash
+    python -m http.server
+    ```
+4.  Abra o navegador e acesse `http://localhost:3000` (para `serve`) ou `http://localhost:8000` (para Python).
